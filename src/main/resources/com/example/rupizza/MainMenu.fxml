@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox alignment="CENTER" prefHeight="493.0" prefWidth="562.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.MainMenuController">
     <padding>
@@ -12,11 +13,6 @@
    <children>
       <AnchorPane prefHeight="475.0" prefWidth="522.0">
          <children>
-            <Button fx:id="buildYourOwn" contentDisplay="BOTTOM" layoutX="33.0" layoutY="48.0" mnemonicParsing="false" text="Build Your Own">
-               <graphic>
-                  <ImageView fx:id="build" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic>
-            </Button>
             <Button contentDisplay="BOTTOM" layoutX="267.0" layoutY="48.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Specialty Pizzas">
                <graphic>
                   <ImageView fx:id="specialty" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
@@ -32,6 +28,16 @@
                   <ImageView fx:id="currentOrder" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
+            <Button contentDisplay="BOTTOM" layoutX="33.0" layoutY="48.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Build Your Own">
+               <graphic>
+                  <ImageView fx:id="build" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <TextArea layoutX="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="121.0" text="RU PIZZA">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </TextArea>
          </children>
       </AnchorPane>
    </children>

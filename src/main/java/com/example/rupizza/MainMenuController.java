@@ -9,14 +9,27 @@ import javafx.scene.control.Label;
 
 public class MainMenuController {
     @FXML
-    private Button buildYourOwn;
+    private ImageView build;
+    @FXML
+    private ImageView specialty;
+    @FXML
+    private ImageView currentOrder;
+    @FXML
+    private ImageView storeOrders;
 
     @FXML
     private void initialize(){
-        ImageView buildYourOwnImg = new ImageView(new Image("file:src/main/java/com/example/rupizza/images/BuildYourOwn.jpg"));
-        buildYourOwn.setGraphic(buildYourOwnImg);
+        Image buildYourOwnImg = new Image("file:src/main/java/com/example/rupizza/images/BuildYourOwn.jpg");
+        build.setImage(buildYourOwnImg);
 
+        Image specialityImg = new Image("file:src/main/java/com/example/rupizza/images/SpecialtyPizzas.jpg");
+        specialty.setImage(specialityImg);
 
+        Image currentOrderImg = new Image("file:src/main/java/com/example/rupizza/images/CurrentOrder.jpg");
+        currentOrder.setImage(currentOrderImg);
+
+        Image storeOrderImg = new Image("file:src/main/java/com/example/rupizza/images/StoreOrders.png");
+        storeOrders.setImage(storeOrderImg);
 
     }
 }
