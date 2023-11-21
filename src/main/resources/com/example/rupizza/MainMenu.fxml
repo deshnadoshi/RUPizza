@@ -33,11 +33,11 @@
                   <ImageView fx:id="build" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <TextArea layoutX="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="121.0" text="RU PIZZA">
+            <Label layoutX="135.0" prefHeight="17.0" prefWidth="265.0" text="RU Pizza Main Menu">
                <font>
-                  <Font name="System Bold Italic" size="20.0" />
+                  <Font name="System Bold" size="27.0" />
                </font>
-            </TextArea>
+            </Label>
          </children>
       </AnchorPane>
    </children>
