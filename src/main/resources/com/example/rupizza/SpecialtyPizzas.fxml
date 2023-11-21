@@ -9,36 +9,44 @@
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <RadioButton fx:id="specialtyDeluxe" layoutX="414.0" layoutY="67.0" mnemonicParsing="false" text="Deluxe">
-               <toggleGroup>
-                  <ToggleGroup fx:id="specialtyType" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="specialtySupreme" layoutX="414.0" layoutY="91.0" mnemonicParsing="false" text="Supreme" toggleGroup="$specialtyType" />
-            <RadioButton fx:id="specialtyMeatzza" layoutX="414.0" layoutY="115.0" mnemonicParsing="false" text="Meatzza" toggleGroup="$specialtyType" />
-            <RadioButton fx:id="specialtySeafood" layoutX="415.0" layoutY="141.0" mnemonicParsing="false" text="Seafood" toggleGroup="$specialtyType" />
-            <RadioButton fx:id="specialtyPepperoni" layoutX="415.0" layoutY="166.0" mnemonicParsing="false" text="Pepperoni" toggleGroup="$specialtyType" />
-            <RadioButton fx:id="specialtySmall" layoutX="32.0" layoutY="226.0" mnemonicParsing="false" text="small">
-               <toggleGroup>
-                  <ToggleGroup fx:id="specialtySize" />
-               </toggleGroup>
-            </RadioButton>
-            <RadioButton fx:id="specialtyMed" layoutX="33.0" layoutY="249.0" mnemonicParsing="false" text="medium" toggleGroup="$specialtySize" />
-            <RadioButton fx:id="specialtyLarge" layoutX="33.0" layoutY="276.0" mnemonicParsing="false" text="large" toggleGroup="$specialtySize" />
             <TextArea fx:id="specialtyPrice" editable="false" layoutX="23.0" layoutY="333.0" prefHeight="28.0" prefWidth="200.0" />
             <Label layoutX="23.0" layoutY="310.0" prefHeight="17.0" prefWidth="37.0" text="price" />
             <Label layoutX="329.0" layoutY="217.0" prefHeight="17.0" prefWidth="37.0" text="sauce" />
             <TextArea fx:id="specialtySauce" editable="false" layoutX="329.0" layoutY="238.0" prefHeight="17.0" prefWidth="200.0" />
             <CheckBox fx:id="specialtyExSauce" layoutX="330.0" layoutY="293.0" mnemonicParsing="false" text="extra sauce" />
             <CheckBox fx:id="specialtyExCheese" layoutX="330.0" layoutY="319.0" mnemonicParsing="false" text="extra cheese" />
-            <ImageView fx:id="specialtyImg" fitHeight="150.0" fitWidth="226.0" layoutX="32.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="202.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="223.0" layoutY="14.0" prefHeight="34.0" prefWidth="189.0" text="Specialty Pizzas">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="151.0" layoutY="199.0" text="Toppings" />
-            <TextArea fx:id="specialtyToppings" editable="false" layoutX="147.0" layoutY="221.0" prefHeight="91.0" prefWidth="153.0" />
+            <Label layoutX="23.0" layoutY="192.0" text="Toppings" />
+            <TextArea fx:id="specialtyToppings" editable="false" layoutX="23.0" layoutY="212.0" prefHeight="91.0" prefWidth="153.0" />
+            <VBox layoutX="417.0" layoutY="157.0" prefHeight="59.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="specialtySmall" mnemonicParsing="false" text="small">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="specialtySize" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="specialtyMed" mnemonicParsing="false" text="medium" toggleGroup="$specialtySize" />
+                  <RadioButton fx:id="specialtyLarge" mnemonicParsing="false" text="large" toggleGroup="$specialtySize" />
+               </children>
+            </VBox>
+            <VBox layoutX="417.0" layoutY="57.0" prefHeight="91.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="specialtyDeluxe" mnemonicParsing="false" text="Deluxe">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="specialtyType" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="specialtySupreme" mnemonicParsing="false" text="Supreme" toggleGroup="$specialtyType" />
+                  <RadioButton fx:id="specialtyMeatzza" mnemonicParsing="false" text="Meatzza" toggleGroup="$specialtyType" />
+                  <RadioButton fx:id="specialtySeafood" mnemonicParsing="false" text="Seafood" toggleGroup="$specialtyType" />
+                  <RadioButton fx:id="specialtyPepperoni" mnemonicParsing="false" text="Pepperoni" toggleGroup="$specialtyType" />
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
    </children>

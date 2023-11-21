@@ -1,14 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.rupizza.BuildYourOwnController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.BuildYourOwnController">
+   <children>
+      <AnchorPane prefHeight="466.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="215.0" layoutY="14.0" text="Build Your Own">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="170.0" text="Additional Toppings">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="byoAddToppings" layoutX="21.0" layoutY="427.0" mnemonicParsing="false" text="Add Selected Toppings" />
+            <TextArea fx:id="byoOutput" editable="false" layoutX="273.0" layoutY="249.0" prefHeight="97.0" prefWidth="281.0" />
+            <Button fx:id="byoClear" layoutX="462.0" layoutY="359.0" mnemonicParsing="false" text="CLEAR ORDER" />
+            <Button fx:id="byoAddOrder" layoutX="145.0" layoutY="346.0" mnemonicParsing="false" text="ADD TO ORDER" />
+            <VBox layoutX="21.0" layoutY="198.0" prefHeight="134.0" prefWidth="139.0">
+               <children>
+                  <CheckBox fx:id="byoGreenPepper" mnemonicParsing="false" text="Green Pepper" />
+                  <CheckBox fx:id="byoOnion" mnemonicParsing="false" text="Onion" />
+                  <CheckBox fx:id="byoPineapple" mnemonicParsing="false" text="Pineapple" />
+                  <CheckBox fx:id="byoOlive" mnemonicParsing="false" text="Black Olives" />
+                  <CheckBox fx:id="byoMushroom" mnemonicParsing="false" text="Mushroom" />
+                  <CheckBox fx:id="byoSausage" mnemonicParsing="false" text="Sausage" />
+                  <CheckBox fx:id="byoChicken" mnemonicParsing="false" text="Chicken" />
+                  <CheckBox fx:id="byoBeef" mnemonicParsing="false" text="Beef" />
+                  <CheckBox fx:id="byoHam" mnemonicParsing="false" text="Ham" />
+                  <CheckBox fx:id="byoCrabMeat" mnemonicParsing="false" text="Crab Meats" />
+                  <CheckBox fx:id="byoPepperoni" mnemonicParsing="false" text="Pepperoni" />
+                  <CheckBox fx:id="byoSquid" mnemonicParsing="false" text="Squid" />
+                  <CheckBox fx:id="byoShrimp" mnemonicParsing="false" text="Shrimp" />
+               </children>
+            </VBox>
+            <VBox layoutX="145.0" layoutY="173.0" prefHeight="25.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="byoSmall" mnemonicParsing="false" text="small">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="byoSize" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="byoMed" mnemonicParsing="false" text="medium" toggleGroup="$byoSize" />
+                  <RadioButton fx:id="byoLarge" mnemonicParsing="false" text="large" toggleGroup="$byoSize" />
+               </children>
+            </VBox>
+            <VBox layoutX="145.0" layoutY="245.0" prefHeight="76.0" prefWidth="100.0">
+               <children>
+                  <RadioButton fx:id="byoTomato" mnemonicParsing="false" text="tomato sauce">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="byoSauce" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="byoAlfredo" mnemonicParsing="false" text="alfredo sauce" toggleGroup="$byoSauce" />
+                  <CheckBox fx:id="byoExSauce" mnemonicParsing="false" text="extra sauce" />
+                  <CheckBox fx:id="byoExCheese" mnemonicParsing="false" text="extra cheese" />
+               </children>
+            </VBox>
+            <TextArea fx:id="byoPrice" editable="false" layoutX="362.0" layoutY="408.0" prefHeight="34.0" prefWidth="200.0" />
+            <Label layoutX="362.0" layoutY="391.0" text="Price" />
+            <ImageView fx:id="byoImg" fitHeight="115.0" fitWidth="289.0" layoutX="269.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+         </children></AnchorPane>
+   </children>
 </AnchorPane>
