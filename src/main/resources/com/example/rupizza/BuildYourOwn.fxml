@@ -20,7 +20,7 @@
                </font>
             </Label>
             <Button fx:id="byoAddToppings" layoutX="21.0" layoutY="427.0" mnemonicParsing="false" text="Add Selected Toppings" />
-            <TextArea fx:id="byoOutput" editable="false" layoutX="273.0" layoutY="249.0" prefHeight="97.0" prefWidth="281.0" />
+            <TextArea fx:id="byoOrder" editable="false" layoutX="273.0" layoutY="249.0" prefHeight="97.0" prefWidth="281.0" />
             <Button fx:id="byoClear" layoutX="462.0" layoutY="359.0" mnemonicParsing="false" text="CLEAR ORDER" />
             <Button fx:id="byoAddOrder" layoutX="145.0" layoutY="346.0" mnemonicParsing="false" text="ADD TO ORDER" />
             <VBox layoutX="21.0" layoutY="198.0" prefHeight="134.0" prefWidth="139.0">
@@ -65,6 +65,10 @@
             <TextArea fx:id="byoPrice" editable="false" layoutX="362.0" layoutY="408.0" prefHeight="34.0" prefWidth="200.0" />
             <Label layoutX="362.0" layoutY="391.0" text="Price" />
             <ImageView fx:id="byoImg" fitHeight="115.0" fitWidth="149.0" layoutX="409.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="byoImg" fitHeight="123.0" fitWidth="159.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="byoOut" editable="false" layoutX="319.0" layoutY="113.0" prefHeight="57.0" prefWidth="180.0" />
+            <Label layoutX="319.0" layoutY="94.0" text="Order Updates:" />
+            <Label layoutX="273.0" layoutY="225.0" text="Your Order:" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
