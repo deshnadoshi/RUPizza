@@ -64,7 +64,7 @@
             </VBox>
             <TextArea fx:id="byoPrice" editable="false" layoutX="362.0" layoutY="408.0" prefHeight="34.0" prefWidth="200.0" />
             <Label layoutX="362.0" layoutY="391.0" text="Price" />
-            <ImageView fx:id="byoImg" fitHeight="115.0" fitWidth="289.0" layoutX="269.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="byoImg" fitHeight="115.0" fitWidth="149.0" layoutX="409.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

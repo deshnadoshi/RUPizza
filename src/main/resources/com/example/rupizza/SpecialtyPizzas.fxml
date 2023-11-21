@@ -47,6 +47,7 @@
                   <RadioButton fx:id="specialtyPepperoni" mnemonicParsing="false" text="Pepperoni" toggleGroup="$specialtyType" />
                </children>
             </VBox>
+            <Button fx:id="specialtyAdd" layoutX="340.0" layoutY="358.0" mnemonicParsing="false" text="ADD TO ORDER" />
          </children>
       </AnchorPane>
    </children>
