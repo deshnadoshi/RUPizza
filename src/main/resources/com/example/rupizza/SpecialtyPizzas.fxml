@@ -34,21 +34,9 @@
                   <RadioButton fx:id="specialtyLarge" mnemonicParsing="false" text="large" toggleGroup="$specialtySize" />
                </children>
             </VBox>
-            <VBox layoutX="417.0" layoutY="57.0" prefHeight="91.0" prefWidth="100.0">
-               <children>
-                  <RadioButton fx:id="specialtyDeluxe" mnemonicParsing="false" text="Deluxe">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="specialtyType" />
-                     </toggleGroup>
-                  </RadioButton>
-                  <RadioButton fx:id="specialtySupreme" mnemonicParsing="false" text="Supreme" toggleGroup="$specialtyType" />
-                  <RadioButton fx:id="specialtyMeatzza" mnemonicParsing="false" text="Meatzza" toggleGroup="$specialtyType" />
-                  <RadioButton fx:id="specialtySeafood" mnemonicParsing="false" text="Seafood" toggleGroup="$specialtyType" />
-                  <RadioButton fx:id="specialtyPepperoni" mnemonicParsing="false" text="Pepperoni" toggleGroup="$specialtyType" />
-               </children>
-            </VBox>
             <Button fx:id="specialtyAdd" layoutX="340.0" layoutY="358.0" mnemonicParsing="false" text="ADD TO ORDER" />
          </children>
       </AnchorPane>
+      <ComboBox fx:id="pizza_options" prefWidth="150.0" translateX="400.0" translateY="55.0" />
    </children>
 </AnchorPane>
