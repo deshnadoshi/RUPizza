@@ -3,6 +3,7 @@ package com.example.rupizza;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
@@ -26,5 +27,10 @@ public class SpecialtyPizzasController {
         String selected = (String) pizza_options.getSelectionModel().getSelectedItem();
         toppings.setItems(pizza_toppings);
         //toppings.getSelectionModel().select(0);
+    }
+
+    @FXML
+    private void addToOrder(ActionEvent event) {
+
     }
 }
