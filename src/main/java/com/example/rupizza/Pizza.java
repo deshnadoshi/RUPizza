@@ -8,5 +8,13 @@ public abstract class Pizza {
     protected boolean extraSauce;
     protected boolean extraCheese;
 
+    public Pizza(Size size, Sauce sauce) {
+        this.size = size;
+        this.sauce = sauce;
+    }
+    public Pizza() {
+
+    }
+
     public abstract double price(); //polymorphism
 }

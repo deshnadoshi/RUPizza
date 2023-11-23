@@ -21,8 +21,7 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="23.0" layoutY="192.0" text="Toppings" />
-            <TextArea fx:id="specialtyToppings" editable="false" layoutX="23.0" layoutY="212.0" prefHeight="91.0" prefWidth="153.0" />
+            <Label layoutX="25.0" layoutY="125.0" text="Toppings" />
             <VBox layoutX="417.0" layoutY="157.0" prefHeight="59.0" prefWidth="100.0">
                <children>
                   <RadioButton fx:id="specialtySmall" mnemonicParsing="false" text="small">
@@ -38,5 +37,6 @@
          </children>
       </AnchorPane>
       <ComboBox fx:id="pizza_options" prefWidth="150.0" translateX="400.0" translateY="55.0" />
+      <ListView fx:id="toppings" layoutX="25.0" layoutY="150.0" prefHeight="150.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
