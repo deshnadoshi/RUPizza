@@ -13,22 +13,22 @@
    <children>
       <AnchorPane prefHeight="475.0" prefWidth="522.0">
          <children>
-            <Button contentDisplay="BOTTOM" layoutX="267.0" layoutY="48.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Specialty Pizzas">
+            <Button contentDisplay="BOTTOM" layoutX="267.0" layoutY="48.0" mnemonicParsing="false" onAction="#goToSpecialtyPizzas" prefHeight="127.0" prefWidth="216.0" text="Specialty Pizzas">
                <graphic>
                   <ImageView fx:id="specialty" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" layoutX="267.0" layoutY="242.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Store Orders">
+            <Button contentDisplay="BOTTOM" layoutX="267.0" layoutY="242.0" mnemonicParsing="false" onAction="#goToStoreOrders" prefHeight="127.0" prefWidth="216.0" text="Store Orders">
                <graphic>
                   <ImageView fx:id="storeOrders" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" layoutX="33.0" layoutY="242.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Current Order">
+            <Button contentDisplay="BOTTOM" layoutX="33.0" layoutY="242.0" mnemonicParsing="false" onAction="#goToCurrentOrder" prefHeight="127.0" prefWidth="216.0" text="Current Order">
                <graphic>
                   <ImageView fx:id="currentOrder" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <Button contentDisplay="BOTTOM" layoutX="33.0" layoutY="48.0" mnemonicParsing="false" prefHeight="127.0" prefWidth="216.0" text="Build Your Own">
+            <Button contentDisplay="BOTTOM" layoutX="33.0" layoutY="48.0" mnemonicParsing="false" onAction="#goToBuildYourOwn" prefHeight="127.0" prefWidth="216.0" text="Build Your Own">
                <graphic>
                   <ImageView fx:id="build" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
