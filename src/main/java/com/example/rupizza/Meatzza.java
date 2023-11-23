@@ -6,6 +6,9 @@ public class Meatzza extends Pizza {
         super(size, Sauce.TOMATO, extraSauce, extraCheese);
     }
 
+    public void setPizzaSize(Size size) {
+        this.size = size;
+    }
     public void setExtraSauce() {
         extraSauce = true;
     }

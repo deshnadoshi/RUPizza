@@ -5,6 +5,9 @@ public class Supreme extends Pizza {
         super(size, Sauce.TOMATO, extraSauce, extraCheese);
     }
 
+    public void setPizzaSize(Size size) {
+        this.size = size;
+    }
     public void setExtraSauce() {
         extraSauce = true;
     }

@@ -5,6 +5,9 @@ public class Seafood extends Pizza {
         super(size, Sauce.ALFREDO, extraSauce, extraCheese);
     }
 
+    public void setPizzaSize(Size size) {
+        this.size = size;
+    }
     public void setExtraSauce() {
         extraSauce = true;
     }
