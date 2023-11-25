@@ -107,24 +107,30 @@ public class SpecialtyPizzasController {
             }
 
         }
+
         if (temp != null){
             System.out.println("calculating price here");
             pizzaPrice = temp.price();
 
+            /**
             if (selectedExtraCheese()){
                 pizzaPrice += 1;
             }
             if (selectedExtraSauce()){
                 pizzaPrice += 1;
-            }
+            } **/
+
         }
-        updatePrice();
+
+        updatePrice(pizzaPrice);
 
         if (pizzaPrice == 0){
             specialtyPrice.setText("Please select a size.");
         } else {
             specialtyPrice.setText("" + pizzaPrice);
         }
+
+        updatePrice(pizzaPrice);
     }
 
     @FXML
@@ -154,7 +160,8 @@ public class SpecialtyPizzasController {
     }
 
     @FXML
-    private void updatePrice(){
+    private void updatePrice(double price){
+        System.out.println("update price called");
         specialtySize.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 RadioButton selectedRadioButton = (RadioButton) newValue;
@@ -163,13 +170,26 @@ public class SpecialtyPizzasController {
             }
         });
 
-
         specialtyExSauce.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue) {
-                calculatePrice();
-            }
+            // updateExtrasPrice(price);
+            specialtyPrice.setText("" + updateExtraSaucePrice(price));
         });
 
+        specialtyExCheese.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            specialtyPrice.setText("" + updateExtraCheesePrice(price));
+        });
+
+
+
+    }
+
+    @FXML
+    private double updateExtraSaucePrice(double totalPrice){
+        return specialtyExSauce.isSelected() ? totalPrice + 1.0 : totalPrice;
+    }
+    @FXML
+    private double updateExtraCheesePrice(double totalPrice){
+        return specialtyExCheese.isSelected() ? totalPrice + 1.0 : totalPrice;
     }
 
 }
