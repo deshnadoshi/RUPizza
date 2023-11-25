@@ -5,42 +5,25 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.BuildYourOwnController">
+<AnchorPane prefHeight="520.0" prefWidth="624.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.BuildYourOwnController">
    <children>
-      <AnchorPane prefHeight="466.0" prefWidth="600.0">
+      <AnchorPane layoutY="-86.0" prefHeight="596.0" prefWidth="624.0">
          <children>
-            <Label layoutX="215.0" layoutY="14.0" text="Build Your Own">
+            <Label layoutX="227.0" layoutY="96.0" text="Build Your Own">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="21.0" layoutY="170.0" text="Additional Toppings">
+            <Label layoutX="18.0" layoutY="167.0" text="Additional Toppings">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Button fx:id="byoAddToppings" layoutX="21.0" layoutY="427.0" mnemonicParsing="false" text="Add Selected Toppings" />
-            <TextArea fx:id="byoOrder" editable="false" layoutX="273.0" layoutY="249.0" prefHeight="97.0" prefWidth="281.0" />
-            <Button fx:id="byoClear" layoutX="462.0" layoutY="359.0" mnemonicParsing="false" text="CLEAR ORDER" />
-            <Button fx:id="byoAddOrder" layoutX="145.0" layoutY="346.0" mnemonicParsing="false" text="ADD TO ORDER" />
-            <VBox layoutX="21.0" layoutY="198.0" prefHeight="134.0" prefWidth="139.0">
-               <children>
-                  <CheckBox fx:id="byoGreenPepper" mnemonicParsing="false" text="Green Pepper" />
-                  <CheckBox fx:id="byoOnion" mnemonicParsing="false" text="Onion" />
-                  <CheckBox fx:id="byoPineapple" mnemonicParsing="false" text="Pineapple" />
-                  <CheckBox fx:id="byoOlive" mnemonicParsing="false" text="Black Olives" />
-                  <CheckBox fx:id="byoMushroom" mnemonicParsing="false" text="Mushroom" />
-                  <CheckBox fx:id="byoSausage" mnemonicParsing="false" text="Sausage" />
-                  <CheckBox fx:id="byoChicken" mnemonicParsing="false" text="Chicken" />
-                  <CheckBox fx:id="byoBeef" mnemonicParsing="false" text="Beef" />
-                  <CheckBox fx:id="byoHam" mnemonicParsing="false" text="Ham" />
-                  <CheckBox fx:id="byoCrabMeat" mnemonicParsing="false" text="Crab Meats" />
-                  <CheckBox fx:id="byoPepperoni" mnemonicParsing="false" text="Pepperoni" />
-                  <CheckBox fx:id="byoSquid" mnemonicParsing="false" text="Squid" />
-                  <CheckBox fx:id="byoShrimp" mnemonicParsing="false" text="Shrimp" />
-               </children>
-            </VBox>
-            <VBox layoutX="145.0" layoutY="173.0" prefHeight="25.0" prefWidth="100.0">
+            <Button fx:id="byoAddToppings" layoutX="36.0" layoutY="427.0" mnemonicParsing="false" onAction="#addToppings" prefHeight="9.0" prefWidth="65.0" text="add &gt;&gt;" />
+            <TextArea fx:id="byoOrder" editable="false" layoutX="18.0" layoutY="485.0" prefHeight="97.0" prefWidth="281.0" />
+            <Button fx:id="byoClear" layoutX="312.0" layoutY="371.0" mnemonicParsing="false" onAction="#clearOrder" text="CLEAR ORDER" />
+            <Button fx:id="byoAddOrder" layoutX="312.0" layoutY="334.0" mnemonicParsing="false" text="ADD TO ORDER" />
+            <VBox layoutX="312.0" layoutY="189.0" prefHeight="25.0" prefWidth="100.0">
                <children>
                   <RadioButton fx:id="byoSmall" mnemonicParsing="false" text="small">
                      <toggleGroup>
@@ -51,7 +34,7 @@
                   <RadioButton fx:id="byoLarge" mnemonicParsing="false" text="large" toggleGroup="$byoSize" />
                </children>
             </VBox>
-            <VBox layoutX="145.0" layoutY="245.0" prefHeight="76.0" prefWidth="100.0">
+            <VBox layoutX="312.0" layoutY="248.0" prefHeight="76.0" prefWidth="100.0">
                <children>
                   <RadioButton fx:id="byoTomato" mnemonicParsing="false" text="tomato sauce">
                      <toggleGroup>
@@ -62,13 +45,15 @@
                   <CheckBox fx:id="byoExCheese" mnemonicParsing="false" text="extra cheese" />
                </children>
             </VBox>
-            <TextArea fx:id="byoPrice" editable="false" layoutX="362.0" layoutY="408.0" prefHeight="34.0" prefWidth="200.0" />
-            <Label layoutX="362.0" layoutY="391.0" text="Price" />
-            <ImageView fx:id="byoImg" fitHeight="115.0" fitWidth="149.0" layoutX="409.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="byoPrice" editable="false" layoutX="405.0" layoutY="534.0" prefHeight="34.0" prefWidth="200.0" />
+            <Label layoutX="412.0" layoutY="507.0" text="Price" />
+            <ImageView fx:id="byoImg" fitHeight="123.0" fitWidth="170.0" layoutX="438.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="byoImg" fitHeight="123.0" fitWidth="159.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
-            <TextArea fx:id="byoOut" editable="false" layoutX="319.0" layoutY="113.0" prefHeight="57.0" prefWidth="180.0" />
-            <Label layoutX="319.0" layoutY="94.0" text="Order Updates:" />
-            <Label layoutX="273.0" layoutY="225.0" text="Your Order:" />
+            <Label layoutX="18.0" layoutY="461.0" text="Your Order:" />
+            <ListView fx:id="availToppings" layoutX="14.0" layoutY="189.0" prefHeight="231.0" prefWidth="124.0" />
+            <ListView fx:id="addedToppings" layoutX="149.0" layoutY="189.0" prefHeight="231.0" prefWidth="141.0" />
+            <Label layoutX="149.0" layoutY="167.0" text="Your Toppings" />
+            <Button fx:id="byoRemoveToppings" layoutX="189.0" layoutY="427.0" mnemonicParsing="false" onAction="#removeToppings" text="&lt;&lt; remove" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
