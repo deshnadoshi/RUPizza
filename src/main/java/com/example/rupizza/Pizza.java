@@ -8,9 +8,11 @@ public abstract class Pizza {
     protected boolean extraSauce;
     protected boolean extraCheese;
 
-    public Pizza(Size size, Sauce sauce) {
+    public Pizza(Size size, Sauce sauce, boolean extraSauce, boolean extraCheese) {
         this.size = size;
         this.sauce = sauce;
+        this.extraSauce = extraSauce;
+        this.extraCheese = extraCheese;
     }
     public Pizza() {
 

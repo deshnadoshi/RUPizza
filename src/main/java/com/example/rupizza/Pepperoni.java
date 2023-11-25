@@ -1,11 +1,22 @@
 package com.example.rupizza;
 
 public class Pepperoni extends Pizza {
-    public Pepperoni(Size size, Sauce sauce) {
-        super(size, Sauce.TOMATO);
+    public Pepperoni(Size size, Sauce sauce, boolean extraSauce, boolean extraCheese) {
+        super(size, Sauce.TOMATO, extraSauce, extraCheese);
+    }
+
+    public void setPizzaSize(Size size) {
+        this.size = size;
+    }
+    public void setExtraSauce() {
+        extraSauce = true;
+    }
+
+    public void setExtraCheese() {
+        extraCheese = true;
     }
     @Override
     public double price() {
-        return 0;
+        return 10.99 + size.getCode();
     }
 }

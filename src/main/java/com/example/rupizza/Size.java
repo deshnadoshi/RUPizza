@@ -2,8 +2,8 @@ package com.example.rupizza;
 
 public enum Size {
     SMALL(0),
-    MEDIUM(1),
-    LARGE(2);
+    MEDIUM(2),
+    LARGE(4);
 
     private final int CODE;
 
