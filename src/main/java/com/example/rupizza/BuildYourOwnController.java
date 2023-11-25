@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 import javafx.stage.*;
 import javafx.scene.image.Image;
 
-
 import java.util.ArrayList;
 
 public class BuildYourOwnController {
@@ -98,7 +97,6 @@ public class BuildYourOwnController {
         byoExCheese.setSelected(false);
     }
 
-
     @FXML
     private void calculatePrice(){
         double pizzaPrice = 0.0;
@@ -167,6 +165,11 @@ public class BuildYourOwnController {
             }
         }
         return null;
+    }
+
+    @FXML
+    private void addToOrder(ActionEvent event){
+        // need to do stuff for adding to order here
     }
 
 
