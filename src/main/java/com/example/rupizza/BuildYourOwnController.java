@@ -32,6 +32,8 @@ public class BuildYourOwnController {
     private CheckBox byoExSauce;
     @FXML
     private CheckBox byoExCheese;
+    @FXML
+    private Pizza temp = null;
 
     @FXML
     private void initialize(){
@@ -91,13 +93,14 @@ public class BuildYourOwnController {
     @FXML
     private void calculatePrice(){
         double pizzaPrice = 0.0;
+        temp = PizzaMaker.createPizza("BuildYourOwn");
         RadioButton selectedSize = (RadioButton) byoSize.getSelectedToggle();
         if (selectedSize.toString().equals("small")){
-            pizzaPrice +=
+            pizzaPrice += temp.price();
         } else if (selectedSize.toString().equals("medium")){
-
+            pizzaPrice += temp.price();
         } else if (selectedSize.toString().equals("large")){
-
+            pizzaPrice += temp.price();
         }
 
     }
