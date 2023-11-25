@@ -88,6 +88,19 @@ public class BuildYourOwnController {
     }
 
 
+    @FXML
+    private void calculatePrice(){
+        double pizzaPrice = 0.0;
+        RadioButton selectedSize = (RadioButton) byoSize.getSelectedToggle();
+        if (selectedSize.toString().equals("small")){
+            pizzaPrice +=
+        } else if (selectedSize.toString().equals("medium")){
+
+        } else if (selectedSize.toString().equals("large")){
+
+        }
+
+    }
 
 
 }

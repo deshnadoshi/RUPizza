@@ -28,6 +28,6 @@ public class BuildYourOwn extends Pizza {
     }
     @Override
     public double price() {
-        return 8.99 + size.getCode() + ((toppings.size() - 3) * 1.49);
+        return 8.99 + size.getCode();
     }
 }
