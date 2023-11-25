@@ -171,7 +171,6 @@ public class SpecialtyPizzasController {
         });
 
         specialtyExSauce.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            // updateExtrasPrice(price);
             specialtyPrice.setText("" + updateExtraSaucePrice(price));
         });
 
