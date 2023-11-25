@@ -19,4 +19,9 @@ public class Seafood extends Pizza {
     public double price() {
         return 17.99 + size.getCode();
     }
+
+    public void setSauce(Sauce sauce) {
+        this.sauce = Sauce.ALFREDO;
+    }
 }
+

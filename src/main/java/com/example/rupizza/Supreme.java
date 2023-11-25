@@ -19,4 +19,8 @@ public class Supreme extends Pizza {
     public double price() {
         return 15.99 + size.getCode();
     }
+
+    public void setSauce(Sauce sauce) {
+        this.sauce = Sauce.TOMATO;
+    }
 }

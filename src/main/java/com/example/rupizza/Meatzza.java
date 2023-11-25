@@ -20,4 +20,8 @@ public class Meatzza extends Pizza {
     public double price() {
         return 16.99 + size.getCode();
     }
+
+    public void setSauce(Sauce sauce) {
+        this.sauce = Sauce.TOMATO;
+    }
 }

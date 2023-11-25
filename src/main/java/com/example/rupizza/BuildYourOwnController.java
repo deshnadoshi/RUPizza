@@ -42,6 +42,7 @@ public class BuildYourOwnController {
         availToppings.setItems(pizza_toppings);
         ObservableList<String> added_toppings = FXCollections.observableArrayList();
         addedToppings.setItems(added_toppings);
+        byoOrder.setText("Please select a size and sauce to view prices.");
     }
 
     @FXML
@@ -58,6 +59,7 @@ public class BuildYourOwnController {
                 byoOrder.setText("You cannot select more than 7 toppings.");
             }
 
+            calculatePrice();
         }
 
     }
@@ -74,6 +76,7 @@ public class BuildYourOwnController {
             addedToppings.getItems().remove(selectedTopping);
 
             chosen_toppings.remove(selectedTopping.toString());
+            calculatePrice();
         }
 
     }
@@ -93,16 +96,71 @@ public class BuildYourOwnController {
     @FXML
     private void calculatePrice(){
         double pizzaPrice = 0.0;
-        temp = PizzaMaker.createPizza("BuildYourOwn");
         RadioButton selectedSize = (RadioButton) byoSize.getSelectedToggle();
-        if (selectedSize.toString().equals("small")){
-            pizzaPrice += temp.price();
-        } else if (selectedSize.toString().equals("medium")){
-            pizzaPrice += temp.price();
-        } else if (selectedSize.toString().equals("large")){
+        RadioButton selectedSauce = (RadioButton) byoSauce.getSelectedToggle();
+
+        if (selectedSize != null && selectedSauce != null){
+            System.out.println("non null");
+            temp = PizzaMaker.createPizza("BuildYourOwn");
+        }
+
+        if (temp != null){
+            System.out.println("temp not null setting size");
+            temp.setPizzaSize(selectedSize());
+            temp.setSauce(selectedSauce());
+
             pizzaPrice += temp.price();
         }
 
+        if (chosen_toppings.size() > 3){
+            for (int i = 4; i <= chosen_toppings.size(); i++){
+                pizzaPrice += 1.49;
+            }
+        }
+
+        if (byoExCheese.isSelected()){
+            pizzaPrice += 1;
+        }
+        if (byoExSauce.isSelected()){
+            pizzaPrice += 1;
+        }
+
+
+
+        System.out.println("runs here");
+        byoPrice.setText("" + pizzaPrice);
+
+    }
+
+    @FXML
+    private Size selectedSize(){
+        RadioButton selectedButton = (RadioButton) byoSize.getSelectedToggle();
+        if (selectedButton != null){
+            String sizeName = selectedButton.getText();
+            if (sizeName.equals("small")){
+                return Size.SMALL;
+            } else if (sizeName.equals("medium")){
+                return Size.MEDIUM;
+            } else if (sizeName.equals("large")){
+                return Size.LARGE;
+            }
+
+        }
+        return null;
+    }
+
+    @FXML
+    private Sauce selectedSauce(){
+        RadioButton selectedButton = (RadioButton) byoSauce.getSelectedToggle();
+        if (selectedButton != null){
+            String sizeName = selectedButton.getText();
+            if (sizeName.equals("tomato sauce")){
+                return Sauce.TOMATO;
+            } else if (sizeName.equals("alfredo sauce")){
+                return Sauce.ALFREDO;
+            }
+        }
+        return null;
     }
 
 

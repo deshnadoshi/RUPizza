@@ -25,24 +25,24 @@
             <Button fx:id="byoAddOrder" layoutX="312.0" layoutY="334.0" mnemonicParsing="false" text="ADD TO ORDER" />
             <VBox layoutX="312.0" layoutY="189.0" prefHeight="25.0" prefWidth="100.0">
                <children>
-                  <RadioButton fx:id="byoSmall" mnemonicParsing="false" text="small">
+                  <RadioButton fx:id="byoSmall" mnemonicParsing="false" onAction="#calculatePrice" text="small">
                      <toggleGroup>
                         <ToggleGroup fx:id="byoSize" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="byoMed" mnemonicParsing="false" text="medium" toggleGroup="$byoSize" />
-                  <RadioButton fx:id="byoLarge" mnemonicParsing="false" text="large" toggleGroup="$byoSize" />
+                  <RadioButton fx:id="byoMed" mnemonicParsing="false" onAction="#calculatePrice" text="medium" toggleGroup="$byoSize" />
+                  <RadioButton fx:id="byoLarge" mnemonicParsing="false" onAction="#calculatePrice" text="large" toggleGroup="$byoSize" />
                </children>
             </VBox>
             <VBox layoutX="312.0" layoutY="248.0" prefHeight="76.0" prefWidth="100.0">
                <children>
-                  <RadioButton fx:id="byoTomato" mnemonicParsing="false" text="tomato sauce">
+                  <RadioButton fx:id="byoTomato" mnemonicParsing="false" onAction="#calculatePrice" text="tomato sauce">
                      <toggleGroup>
                         <ToggleGroup fx:id="byoSauce" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="byoAlfredo" mnemonicParsing="false" text="alfredo sauce" toggleGroup="$byoSauce" />
-                  <CheckBox fx:id="byoExSauce" mnemonicParsing="false" text="extra sauce" />
-                  <CheckBox fx:id="byoExCheese" mnemonicParsing="false" text="extra cheese" />
+                  <RadioButton fx:id="byoAlfredo" mnemonicParsing="false" onAction="#calculatePrice" text="alfredo sauce" toggleGroup="$byoSauce" />
+                  <CheckBox fx:id="byoExSauce" mnemonicParsing="false" onAction="#calculatePrice" text="extra sauce" />
+                  <CheckBox fx:id="byoExCheese" mnemonicParsing="false" onAction="#calculatePrice" text="extra cheese" />
                </children>
             </VBox>
             <TextArea fx:id="byoPrice" editable="false" layoutX="405.0" layoutY="534.0" prefHeight="34.0" prefWidth="200.0" />

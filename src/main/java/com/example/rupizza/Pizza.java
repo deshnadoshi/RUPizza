@@ -23,5 +23,9 @@ public abstract class Pizza {
 
     public abstract void setExtraCheese();
 
+    public abstract void setSauce(Sauce sauce);
+
     public abstract double price(); //polymorphism
+
+
 }
