@@ -89,37 +89,13 @@ public class SpecialtyPizzasController {
         String pizzaType = pizza_options.getValue().toString();
         RadioButton selectedSize = (RadioButton) specialtySize.getSelectedToggle();
         if (selectedSize != null){
-            if (pizzaType.equals("Deluxe")){
-                System.out.println("del");
-                temp = new Deluxe(selectedSize(), Sauce.TOMATO, selectedExtraSauce(), selectedExtraCheese());
-            } else if (pizzaType.equals("Supreme")){
-                System.out.println("sup");
-                temp = new Supreme(selectedSize(), Sauce.TOMATO, selectedExtraSauce(), selectedExtraCheese());
-            } else if (pizzaType.equals("Meatzza")){
-                System.out.println("meat");
-                temp = new Meatzza(selectedSize(), Sauce.TOMATO, selectedExtraSauce(), selectedExtraCheese());
-            } else if (pizzaType.equals("Seafood")){
-                System.out.println("sea");
-                temp = new Seafood(selectedSize(), Sauce.ALFREDO, selectedExtraSauce(), selectedExtraCheese());
-            } else if (pizzaType.equals("Pepperoni")){
-                System.out.println("pep");
-                temp = new Pepperoni(selectedSize(), Sauce.TOMATO, selectedExtraSauce(), selectedExtraCheese());
-            }
-
+            temp = PizzaMaker.createPizza(pizzaType);
         }
 
         if (temp != null){
             System.out.println("calculating price here");
+            temp.setPizzaSize(selectedSize());
             pizzaPrice = temp.price();
-
-            /**
-            if (selectedExtraCheese()){
-                pizzaPrice += 1;
-            }
-            if (selectedExtraSauce()){
-                pizzaPrice += 1;
-            } **/
-
         }
 
         updatePrice(pizzaPrice);

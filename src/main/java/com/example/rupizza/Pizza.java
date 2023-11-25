@@ -18,5 +18,10 @@ public abstract class Pizza {
 
     }
 
+    public abstract void setPizzaSize(Size size);
+    public abstract void setExtraSauce();
+
+    public abstract void setExtraCheese();
+
     public abstract double price(); //polymorphism
 }
