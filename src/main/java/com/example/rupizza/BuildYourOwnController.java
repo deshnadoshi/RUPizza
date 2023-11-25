@@ -8,7 +8,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.*;
+import javafx.scene.image.Image;
+
 
 import java.util.ArrayList;
 
@@ -34,6 +37,8 @@ public class BuildYourOwnController {
     private CheckBox byoExCheese;
     @FXML
     private Pizza temp = null;
+    @FXML
+    private ImageView byoImg;
 
     @FXML
     private void initialize(){
@@ -43,6 +48,7 @@ public class BuildYourOwnController {
         ObservableList<String> added_toppings = FXCollections.observableArrayList();
         addedToppings.setItems(added_toppings);
         byoOrder.setText("Please select a size and sauce to view prices.");
+        byoImg.setImage(new Image("file:src/main/java/com/example/rupizza/images/byoPizza.jpg"));
     }
 
     @FXML

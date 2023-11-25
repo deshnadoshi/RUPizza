@@ -48,8 +48,7 @@
             <TextArea fx:id="byoPrice" editable="false" layoutX="405.0" layoutY="534.0" prefHeight="34.0" prefWidth="200.0" />
             <Label layoutX="412.0" layoutY="507.0" text="Price" />
             <ImageView fx:id="byoImg" fitHeight="123.0" fitWidth="170.0" layoutX="438.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="byoImg" fitHeight="123.0" fitWidth="159.0" layoutX="14.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" />
-            <Label layoutX="18.0" layoutY="461.0" text="Your Order:" />
+            <Label layoutX="18.0" layoutY="461.0" text="Notification:" />
             <ListView fx:id="availToppings" layoutX="14.0" layoutY="189.0" prefHeight="231.0" prefWidth="124.0" />
             <ListView fx:id="addedToppings" layoutX="149.0" layoutY="189.0" prefHeight="231.0" prefWidth="141.0" />
             <Label layoutX="149.0" layoutY="167.0" text="Your Toppings" />
