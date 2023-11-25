@@ -15,7 +15,7 @@
             <TextArea fx:id="specialtySauce" editable="false" layoutX="329.0" layoutY="238.0" prefHeight="17.0" prefWidth="200.0" />
             <CheckBox fx:id="specialtyExSauce" layoutX="330.0" layoutY="293.0" mnemonicParsing="false" text="extra sauce" />
             <CheckBox fx:id="specialtyExCheese" layoutX="330.0" layoutY="319.0" mnemonicParsing="false" text="extra cheese" />
-            <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="202.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="182.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="223.0" layoutY="14.0" prefHeight="34.0" prefWidth="189.0" text="Specialty Pizzas">
                <font>
                   <Font name="System Bold" size="23.0" />
