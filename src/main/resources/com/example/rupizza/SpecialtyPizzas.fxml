@@ -13,8 +13,8 @@
             <Label layoutX="23.0" layoutY="310.0" prefHeight="17.0" prefWidth="37.0" text="price" />
             <Label layoutX="329.0" layoutY="217.0" prefHeight="17.0" prefWidth="37.0" text="sauce" />
             <TextArea fx:id="specialtySauce" editable="false" layoutX="329.0" layoutY="238.0" prefHeight="17.0" prefWidth="200.0" />
-            <CheckBox fx:id="specialtyExSauce" layoutX="330.0" layoutY="293.0" mnemonicParsing="false" text="extra sauce" />
-            <CheckBox fx:id="specialtyExCheese" layoutX="330.0" layoutY="319.0" mnemonicParsing="false" text="extra cheese" />
+            <CheckBox fx:id="specialtyExSauce" layoutX="330.0" layoutY="293.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra sauce" />
+            <CheckBox fx:id="specialtyExCheese" layoutX="330.0" layoutY="319.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra cheese" />
             <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="182.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="223.0" layoutY="14.0" prefHeight="34.0" prefWidth="189.0" text="Specialty Pizzas">
                <font>
@@ -24,13 +24,13 @@
             <Label layoutX="25.0" layoutY="125.0" text="Toppings" />
             <VBox layoutX="417.0" layoutY="157.0" prefHeight="59.0" prefWidth="100.0">
                <children>
-                  <RadioButton fx:id="specialtySmall" mnemonicParsing="false" text="small">
+                  <RadioButton fx:id="specialtySmall" mnemonicParsing="false" onAction="#calculatePrice" text="small">
                      <toggleGroup>
                         <ToggleGroup fx:id="specialtySize" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="specialtyMed" mnemonicParsing="false" text="medium" toggleGroup="$specialtySize" />
-                  <RadioButton fx:id="specialtyLarge" mnemonicParsing="false" text="large" toggleGroup="$specialtySize" />
+                  <RadioButton fx:id="specialtyMed" mnemonicParsing="false" onAction="#calculatePrice" text="medium" toggleGroup="$specialtySize" />
+                  <RadioButton fx:id="specialtyLarge" mnemonicParsing="false" onAction="#calculatePrice" text="large" toggleGroup="$specialtySize" />
                </children>
             </VBox>
             <Button fx:id="specialtyAdd" layoutX="340.0" layoutY="358.0" mnemonicParsing="false" text="ADD TO ORDER" />

@@ -100,6 +100,13 @@ public class SpecialtyPizzasController {
 
         updatePrice(pizzaPrice);
 
+        if (specialtyExCheese.isSelected()){
+            pizzaPrice += 1;
+        }
+        if (specialtyExSauce.isSelected()){
+            pizzaPrice += 1;
+        }
+
         if (pizzaPrice == 0){
             specialtyPrice.setText("Please select a size.");
         } else {
