@@ -174,4 +174,9 @@ public class SpecialtyPizzasController {
         return specialtyExCheese.isSelected() ? totalPrice + 1.0 : totalPrice;
     }
 
+    @FXML
+    public String getPrice(){
+        return specialtyPrice.getText().toString();
+    }
+
 }

@@ -41,8 +41,8 @@ public class BuildYourOwnController {
 
     @FXML
     private void initialize(){
-        ObservableList<String> pizza_toppings = FXCollections.observableArrayList("Green Pepper", "Onion", "Pineapple", "Black Olives", "Mushroom", "Sausage", "Chicken",
-                "Beef", "Ham", "Crab Meats", "Pepperoni", "Shrimp", "Squid");
+        ObservableList<String> pizza_toppings = FXCollections.observableArrayList("GreenPepper", "Onion", "Pineapple", "BlackOlives", "Mushroom", "Sausage", "Chicken",
+                "Beef", "Ham", "CrabMeats", "Pepperoni", "Shrimp", "Squid");
         availToppings.setItems(pizza_toppings);
         ObservableList<String> added_toppings = FXCollections.observableArrayList();
         addedToppings.setItems(added_toppings);
@@ -104,12 +104,10 @@ public class BuildYourOwnController {
         RadioButton selectedSauce = (RadioButton) byoSauce.getSelectedToggle();
 
         if (selectedSize != null && selectedSauce != null){
-            System.out.println("non null");
             temp = PizzaMaker.createPizza("BuildYourOwn");
         }
 
         if (temp != null){
-            System.out.println("temp not null setting size");
             temp.setPizzaSize(selectedSize());
             temp.setSauce(selectedSauce());
 
@@ -123,15 +121,14 @@ public class BuildYourOwnController {
         }
 
         if (byoExCheese.isSelected()){
+            temp.setExtraCheese(true);
             pizzaPrice += 1;
         }
         if (byoExSauce.isSelected()){
+            temp.setExtraSauce(true);
             pizzaPrice += 1;
         }
 
-
-
-        System.out.println("runs here");
         byoPrice.setText("" + pizzaPrice);
 
     }
@@ -168,9 +165,32 @@ public class BuildYourOwnController {
     }
 
     @FXML
+    private void setSelectedToppings(){
+        ArrayList <Topping> pizza_toppings = new ArrayList<>();
+        if (chosen_toppings != null && chosen_toppings.size() > 0){
+            for (int i = 0; i < chosen_toppings.size(); i++){
+                String topping_name = chosen_toppings.get(i).toString().toLowerCase();
+                for (Topping topping : Topping.values()){
+                    String topping_enum = topping.toString().toLowerCase();
+                    if(topping_name.equals(topping_enum)){
+                        pizza_toppings.add(topping);
+                    }
+                }
+            }
+        }
+        temp.setToppings(pizza_toppings);
+    }
+
+    @FXML
     private void addToOrder(ActionEvent event){
+
         // need to do stuff for adding to order here
     }
+
+
+
+
+
 
 
 }

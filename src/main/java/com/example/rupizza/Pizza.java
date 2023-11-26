@@ -19,13 +19,18 @@ public abstract class Pizza {
     }
 
     public abstract void setPizzaSize(Size size);
-    public abstract void setExtraSauce();
+    public abstract void setExtraSauce(boolean addSauce);
 
-    public abstract void setExtraCheese();
+    public abstract void setExtraCheese(boolean addCheese);
 
     public abstract void setSauce(Sauce sauce);
 
     public abstract double price(); //polymorphism
+
+    public abstract void setToppings(ArrayList<Topping> toppings);
+
+    @Override
+    public abstract String toString();
 
 
 }

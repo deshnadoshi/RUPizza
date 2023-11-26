@@ -18,4 +18,9 @@ public class Order {
 
         return true;
     }
+
+    public int getOrderNumber(){
+
+        return 0;
+    }
 }
