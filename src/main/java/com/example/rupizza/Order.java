@@ -20,8 +20,7 @@ public class Order {
     }
 
     public int getOrderNumber(){
-
-        return 0;
+        return orderNumber;
     }
 
     public String toString(){

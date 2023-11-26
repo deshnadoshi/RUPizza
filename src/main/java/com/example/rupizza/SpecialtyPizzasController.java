@@ -11,6 +11,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
 
+import java.util.ArrayList;
+
 public class SpecialtyPizzasController {
     @FXML
     private ComboBox pizza_options;
@@ -34,8 +36,12 @@ public class SpecialtyPizzasController {
     private RadioButton specialtyLarge;
     @FXML
     private TextArea specialtyPrice;
+    @FXML
+    private TextArea specialtyNotif;
 
-    private String removeExcess = "remove";
+    private ArrayList<Pizza> my_pizzas = new ArrayList<>();
+    private Order current_order;
+
 
     @FXML
     private void initialize() {
@@ -75,11 +81,6 @@ public class SpecialtyPizzasController {
                 calculatePrice();
             }
         });
-    }
-
-    @FXML
-    private void addToOrder(ActionEvent event) {
-
     }
 
     @FXML
@@ -143,7 +144,6 @@ public class SpecialtyPizzasController {
 
     @FXML
     private void updatePrice(double price){
-        System.out.println("update price called");
         specialtySize.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 RadioButton selectedRadioButton = (RadioButton) newValue;
@@ -160,8 +160,6 @@ public class SpecialtyPizzasController {
             specialtyPrice.setText("" + updateExtraCheesePrice(price));
         });
 
-
-
     }
 
     @FXML
@@ -177,5 +175,37 @@ public class SpecialtyPizzasController {
     public String getPrice(){
         return specialtyPrice.getText().toString();
     }
+
+    @FXML
+    private void addToOrder(){
+        String pizzaType = pizza_options.getValue().toString();
+        Pizza new_pizza = PizzaMaker.createPizza(pizzaType);
+
+        if (new_pizza != null){
+            new_pizza.setExtraSauce(selectedExtraSauce());
+            new_pizza.setExtraCheese(selectedExtraCheese());
+            new_pizza.setPizzaSize(selectedSize());
+
+            Double price = Double.parseDouble(specialtyPrice.getText());
+            new_pizza.setPrice(price);
+
+            my_pizzas.add(new_pizza);
+
+            current_order = new Order(1, my_pizzas);
+
+            specialtyNotif.appendText("\n" + new_pizza.toString());
+            specialtyNotif.appendText("\nThis pizza was added to your order!");
+            specialtyNotif.appendText("\nHere is your complete order: ");
+            specialtyNotif.appendText(current_order.toString());
+
+        }
+
+
+
+
+
+
+    }
+
 
 }

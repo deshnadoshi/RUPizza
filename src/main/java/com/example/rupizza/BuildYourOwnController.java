@@ -38,7 +38,7 @@ public class BuildYourOwnController {
     private Pizza new_order = null;
     @FXML
     private ImageView byoImg;
-    public Order current_order = null;
+    private Order current_order = null;
     private ArrayList <Pizza> my_pizzas = new ArrayList<>();
 
     @FXML
@@ -199,6 +199,7 @@ public class BuildYourOwnController {
             setSelectedToppings();
             my_pizzas.add(new_order);
             current_order = new Order(1, my_pizzas);
+
             byoOrder.appendText("\n" + new_order.toString());
             byoOrder.appendText("\nThis pizza was added to your order!");
             byoOrder.appendText("\nHere is your complete order: ");
@@ -207,9 +208,7 @@ public class BuildYourOwnController {
             byoOrder.appendText("Missing pizza information. Please customize your pizza.");
         }
 
-
     }
-
 
 
 }
