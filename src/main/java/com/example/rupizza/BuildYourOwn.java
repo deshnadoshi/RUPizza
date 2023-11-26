@@ -49,6 +49,11 @@ public class BuildYourOwn extends Pizza {
         return 8.99 + size.getCode();
     }
 
+
+    public double advancedPrice(){
+        return 8.99 + size.getCode();
+    }
+
     public String toStringToppings(ArrayList <Topping> all_toppings){
         String retString = "";
         for (Topping allTopping : all_toppings) {

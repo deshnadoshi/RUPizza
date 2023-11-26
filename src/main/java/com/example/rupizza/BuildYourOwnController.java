@@ -114,7 +114,7 @@ public class BuildYourOwnController {
             new_order.setPizzaSize(selectedSize());
             new_order.setSauce(selectedSauce());
 
-            pizzaPrice += new_order.price();
+            pizzaPrice += new_order.advancedPrice();
         }
 
         if (chosen_toppings.size() > 3){

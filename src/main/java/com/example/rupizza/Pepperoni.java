@@ -22,6 +22,10 @@ public class Pepperoni extends Pizza {
         return 10.99 + size.getCode();
     }
 
+    public double advancedPrice() {
+        return 10.99 + size.getCode();
+    }
+
     public void setSauce(Sauce sauce) {
         this.sauce = Sauce.TOMATO;
     }

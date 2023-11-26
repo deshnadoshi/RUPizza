@@ -40,6 +40,12 @@ public class Deluxe extends Pizza {
         return "";
     }
 
+    public double advancedPrice() {
+        return 14.99 + size.getCode();
+    }
+
+
+
     public void setSauce(Sauce sauce) {
         this.sauce = Sauce.TOMATO;
     }
