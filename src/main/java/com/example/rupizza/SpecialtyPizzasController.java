@@ -93,7 +93,6 @@ public class SpecialtyPizzasController {
         }
 
         if (temp != null){
-            System.out.println("calculating price here");
             temp.setPizzaSize(selectedSize());
             pizzaPrice = temp.price();
         }

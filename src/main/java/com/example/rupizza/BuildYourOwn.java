@@ -50,10 +50,11 @@ public class BuildYourOwn extends Pizza {
     }
 
     public String toStringToppings(ArrayList <Topping> all_toppings){
+        String retString = "";
         for (Topping allTopping : all_toppings) {
-            return allTopping.toString() + ", ";
+            retString += (allTopping.toString() + ", ");
         }
-        return "";
+        return retString;
     }
 
     public String toString(){

@@ -4,7 +4,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="467.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.rupizza.CurrentOrderController">
    <children>
       <Label layoutX="229.0" layoutY="14.0" text="Current Order">
@@ -13,13 +12,13 @@
          </font>
       </Label>
       <Label layoutX="26.0" layoutY="64.0" text="Order Number:" />
-      <TextArea fx:id="coOrderNum" layoutX="114.0" layoutY="54.0" prefHeight="9.0" prefWidth="109.0" />
+      <TextArea fx:id="coOrderNum" editable="false" layoutX="114.0" layoutY="54.0" prefHeight="9.0" prefWidth="109.0" />
       <Label layoutX="26.0" layoutY="356.0" text="subtotal" />
       <Label layoutX="215.0" layoutY="356.0" text="sales tax" />
       <Label layoutX="26.0" layoutY="417.0" text="order total" />
-      <TextArea fx:id="coPreTaxTotal" layoutX="83.0" layoutY="346.0" prefHeight="38.0" prefWidth="120.0" />
-      <TextArea fx:id="coTax" layoutX="268.0" layoutY="346.0" prefHeight="38.0" prefWidth="109.0" />
-      <TextArea fx:id="coTotalPrice" layoutX="95.0" layoutY="407.0" prefHeight="38.0" prefWidth="120.0" />
+      <TextArea fx:id="coPreTaxTotal" editable="false" layoutX="83.0" layoutY="346.0" prefHeight="38.0" prefWidth="120.0" />
+      <TextArea fx:id="coTax" editable="false" layoutX="268.0" layoutY="346.0" prefHeight="38.0" prefWidth="109.0" />
+      <TextArea fx:id="coTotalPrice" editable="false" layoutX="95.0" layoutY="407.0" prefHeight="38.0" prefWidth="120.0" />
       <Button fx:id="coRemove" layoutX="477.0" layoutY="352.0" mnemonicParsing="false" text="Remove Pizza" />
       <Button fx:id="coPlace" layoutX="477.0" layoutY="384.0" mnemonicParsing="false" text="Place Order" />
       <ListView fx:id="coOrder" layoutX="26.0" layoutY="100.0" prefHeight="200.0" prefWidth="544.0" />
