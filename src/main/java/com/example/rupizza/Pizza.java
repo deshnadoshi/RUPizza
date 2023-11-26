@@ -27,6 +27,8 @@ public abstract class Pizza {
 
     public abstract double price(); //polymorphism
 
+    public abstract double advancedPrice(); //polymorphism
+
     public abstract void setToppings(ArrayList<Topping> toppings);
 
     public abstract void setPrice(double amount);

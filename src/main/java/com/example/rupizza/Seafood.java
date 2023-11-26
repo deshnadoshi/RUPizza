@@ -22,11 +22,28 @@ public class Seafood extends Pizza {
         return 17.99 + size.getCode();
     }
 
+    public double advancedPrice() {
+        return 17.99 + size.getCode();
+    }
+
     public void setSauce(Sauce sauce) {
         this.sauce = Sauce.ALFREDO;
     }
 
     public String toString(){
+        return "[Seafood] Shrimp, Squid, CrabMeats, " + size.toString().toLowerCase() + ", " + sauce.toString().toLowerCase()
+                + ", " + extrasToString() + " $" + price();
+    }
+
+    public String extrasToString(){
+        if (extraCheese && extraSauce){
+            return "extra sauce, extra cheese";
+        } else if (extraCheese){
+            return "extra cheese";
+        } else if (extraSauce){
+            return "extra sauce";
+        }
+
         return "";
     }
 

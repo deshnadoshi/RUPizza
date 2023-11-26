@@ -35,9 +35,11 @@ public class BuildYourOwnController {
     @FXML
     private CheckBox byoExCheese;
     @FXML
-    private Pizza temp = null;
+    private Pizza new_order = null;
     @FXML
     private ImageView byoImg;
+    private Order current_order = null;
+    private ArrayList <Pizza> my_pizzas = new ArrayList<>();
 
     @FXML
     private void initialize(){
@@ -61,7 +63,7 @@ public class BuildYourOwnController {
                 chosen_toppings.add(selectedTopping.toString());
                 byoOrder.clear();
             } else {
-                byoOrder.setText("You cannot select more than 7 toppings.");
+                byoOrder.setText("You cannot select more than 7 toppings. You must select a sauce and size to see the price of the pizza.");
             }
 
             calculatePrice();
@@ -87,14 +89,15 @@ public class BuildYourOwnController {
     }
 
     @FXML
-    private void clearOrder(ActionEvent event){
+    private void clearOrder(){
         initialize();
-        byoOrder.clear();
+        // byoOrder.clear();
         byoPrice.clear();
         byoSize.getToggles().forEach(toggle -> toggle.setSelected(false));
         byoSauce.getToggles().forEach(toggle -> toggle.setSelected(false));
         byoExSauce.setSelected(false);
         byoExCheese.setSelected(false);
+        chosen_toppings.clear();
     }
 
     @FXML
@@ -104,14 +107,14 @@ public class BuildYourOwnController {
         RadioButton selectedSauce = (RadioButton) byoSauce.getSelectedToggle();
 
         if (selectedSize != null && selectedSauce != null){
-            temp = PizzaMaker.createPizza("BuildYourOwn");
+            new_order = PizzaMaker.createPizza("BuildYourOwn");
         }
 
-        if (temp != null){
-            temp.setPizzaSize(selectedSize());
-            temp.setSauce(selectedSauce());
+        if (new_order != null && selectedSize != null && selectedSauce != null){
+            new_order.setPizzaSize(selectedSize());
+            new_order.setSauce(selectedSauce());
 
-            pizzaPrice += temp.price();
+            pizzaPrice += new_order.advancedPrice();
         }
 
         if (chosen_toppings.size() > 3){
@@ -120,17 +123,20 @@ public class BuildYourOwnController {
             }
         }
 
-        if (byoExCheese.isSelected()){
-            temp.setExtraCheese(true);
+        if (byoExCheese.isSelected() && new_order != null){
+            new_order.setExtraCheese(true);
             pizzaPrice += 1;
+        } else if (!byoExCheese.isSelected() && new_order != null){
+            new_order.setExtraCheese(false);
         }
-        if (byoExSauce.isSelected()){
-            temp.setExtraSauce(true);
+        if (byoExSauce.isSelected() && new_order != null){
+            new_order.setExtraSauce(true);
             pizzaPrice += 1;
+        } else if (!byoExSauce.isSelected() && new_order != null){
+            new_order.setExtraSauce(false);
         }
-        if (temp != null){
-            temp.setPrice(pizzaPrice);
-
+        if (new_order != null){
+            new_order.setPrice(pizzaPrice);
         }
         byoPrice.setText("" + pizzaPrice);
 
@@ -170,9 +176,9 @@ public class BuildYourOwnController {
     @FXML
     private void setSelectedToppings(){
         ArrayList <Topping> pizza_toppings = new ArrayList<>();
-        if (chosen_toppings != null && chosen_toppings.size() > 0){
+        if (chosen_toppings != null && !chosen_toppings.isEmpty()){
             for (int i = 0; i < chosen_toppings.size(); i++){
-                String topping_name = chosen_toppings.get(i).toString().toLowerCase();
+                String topping_name = chosen_toppings.get(i).toLowerCase();
                 for (Topping topping : Topping.values()){
                     String topping_enum = topping.toString().toLowerCase();
                     if(topping_name.equals(topping_enum)){
@@ -181,21 +187,28 @@ public class BuildYourOwnController {
                 }
             }
         }
-        temp.setToppings(pizza_toppings);
+        if (new_order != null){
+            new_order.setToppings(pizza_toppings);
+        }
+
     }
-
-
 
     @FXML
     private void addToOrder(ActionEvent event){
+        if (new_order != null){
+            setSelectedToppings();
+            my_pizzas.add(new_order);
+            current_order = new Order(1, my_pizzas);
 
-        // need to do stuff for adding to order here
+            byoOrder.appendText("\n" + new_order.toString());
+            byoOrder.appendText("\nThis pizza was added to your order!");
+            byoOrder.appendText("\nHere is your complete order: ");
+            byoOrder.appendText(current_order.toString());
+        } else {
+            byoOrder.appendText("Missing pizza information. Please customize your pizza.");
+        }
+
     }
-
-
-
-
-
 
 
 }

@@ -46,21 +46,41 @@ public class BuildYourOwn extends Pizza {
 
     @Override
     public double price() {
+        double extraPrice = 0;
+        if (extraCheese){
+            extraPrice += 1;
+        }
+        if (extraSauce){
+            extraPrice += 1;
+        }
+
+        if (toppings != null) {
+            if (toppings.size() <= 3)
+                return 8.99 + size.getCode() + extraPrice;
+            else
+                return 8.99 + size.getCode() + ((toppings.size() - 3) * 1.49) + extraPrice;
+        }
+
+        return 8.99 + size.getCode() + extraPrice;
+    }
+
+
+    public double advancedPrice(){
         return 8.99 + size.getCode();
     }
 
     public String toStringToppings(ArrayList <Topping> all_toppings){
-        for (int i = 0; i < all_toppings.size(); i++){
-            return all_toppings.get(i).toString() + ", ";
+        String retString = "";
+        for (Topping allTopping : all_toppings) {
+            retString += (allTopping.toString() + ", ");
         }
-        return "";
+        return retString;
     }
 
     public String toString(){
-        return "[Build Your Own] " + toStringToppings(toppings) + size.toString().toLowerCase() +
-                sauce.toString().toLowerCase() + ", " + extrasToString() + ", $" + pizza_price;
+        return "[Build Your Own] " + toStringToppings(toppings) + size.toString().toLowerCase() + ", " +
+                sauce.toString().toLowerCase() + ", " + extrasToString() + " $" + pizza_price;
     }
-
 
 
 }

@@ -11,18 +11,18 @@
          <children>
             <TextArea fx:id="specialtyPrice" editable="false" layoutX="23.0" layoutY="333.0" prefHeight="28.0" prefWidth="200.0" />
             <Label layoutX="23.0" layoutY="310.0" prefHeight="17.0" prefWidth="37.0" text="price" />
-            <Label layoutX="329.0" layoutY="217.0" prefHeight="17.0" prefWidth="37.0" text="sauce" />
-            <TextArea fx:id="specialtySauce" editable="false" layoutX="329.0" layoutY="238.0" prefHeight="17.0" prefWidth="200.0" />
-            <CheckBox fx:id="specialtyExSauce" layoutX="330.0" layoutY="293.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra sauce" />
-            <CheckBox fx:id="specialtyExCheese" layoutX="330.0" layoutY="319.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra cheese" />
-            <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="182.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true" />
+            <Label layoutX="264.0" layoutY="211.0" prefHeight="17.0" prefWidth="37.0" text="sauce" />
+            <TextArea fx:id="specialtySauce" editable="false" layoutX="264.0" layoutY="228.0" prefHeight="38.0" prefWidth="100.0" />
+            <CheckBox fx:id="specialtyExSauce" layoutX="372.0" layoutY="203.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra sauce" />
+            <CheckBox fx:id="specialtyExCheese" layoutX="372.0" layoutY="228.0" mnemonicParsing="false" onAction="#calculatePrice" text="extra cheese" />
+            <ImageView fx:id="specialtyImg" fitHeight="133.0" fitWidth="200.0" layoutX="183.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
             <Label layoutX="223.0" layoutY="14.0" prefHeight="34.0" prefWidth="189.0" text="Specialty Pizzas">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
             <Label layoutX="25.0" layoutY="125.0" text="Toppings" />
-            <VBox layoutX="417.0" layoutY="157.0" prefHeight="59.0" prefWidth="100.0">
+            <VBox layoutX="182.0" layoutY="228.0" prefHeight="59.0" prefWidth="100.0">
                <children>
                   <RadioButton fx:id="specialtySmall" mnemonicParsing="false" onAction="#calculatePrice" text="small">
                      <toggleGroup>
@@ -33,7 +33,9 @@
                   <RadioButton fx:id="specialtyLarge" mnemonicParsing="false" onAction="#calculatePrice" text="large" toggleGroup="$specialtySize" />
                </children>
             </VBox>
-            <Button fx:id="specialtyAdd" layoutX="340.0" layoutY="358.0" mnemonicParsing="false" text="ADD TO ORDER" />
+            <Button fx:id="specialtyAdd" layoutX="468.0" layoutY="358.0" mnemonicParsing="false" onAction="#addToOrder" text="ADD TO ORDER" />
+            <TextArea fx:id="specialtyNotif" layoutX="253.0" layoutY="303.0" prefHeight="84.0" prefWidth="200.0" />
+            <Label layoutX="253.0" layoutY="287.0" text="Notifications:" />
          </children>
       </AnchorPane>
       <ComboBox fx:id="pizza_options" prefWidth="150.0" translateX="400.0" translateY="55.0" />

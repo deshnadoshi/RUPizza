@@ -28,12 +28,31 @@ public class Deluxe extends Pizza {
 
     }
 
+    public String extrasToString(){
+        if (extraCheese && extraSauce){
+            return "extra sauce, extra cheese";
+        } else if (extraCheese){
+            return "extra cheese";
+        } else if (extraSauce){
+            return "extra sauce";
+        }
+
+        return "";
+    }
+
+    public double advancedPrice() {
+        return 14.99 + size.getCode();
+    }
+
+
+
     public void setSauce(Sauce sauce) {
         this.sauce = Sauce.TOMATO;
     }
 
     public String toString(){
-        return "[Deluxe] Sausage, Pepperoni, GreenPepper, Onion, Mushroom, ";
+        return "[Deluxe] Sausage, Pepperoni, GreenPepper, Onion, Mushroom, " + size.toString().toLowerCase() + ", " + sauce.toString().toLowerCase()
+                + ", " + extrasToString() + " $" + price();
     }
 
     @Override
