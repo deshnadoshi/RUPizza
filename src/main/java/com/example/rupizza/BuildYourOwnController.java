@@ -123,10 +123,14 @@ public class BuildYourOwnController {
         if (byoExCheese.isSelected() && temp != null){
             temp.setExtraCheese(true);
             pizzaPrice += 1;
+        } else if (!byoExCheese.isSelected()){
+            temp.setExtraCheese(false);
         }
         if (byoExSauce.isSelected() && temp != null){
             temp.setExtraSauce(true);
             pizzaPrice += 1;
+        } else if (!byoExSauce.isSelected()){
+            temp.setExtraSauce(false);
         }
         if (temp != null){
             temp.setPrice(pizzaPrice);
@@ -169,9 +173,9 @@ public class BuildYourOwnController {
     @FXML
     private void setSelectedToppings(){
         ArrayList <Topping> pizza_toppings = new ArrayList<>();
-        if (chosen_toppings != null && chosen_toppings.size() > 0){
+        if (chosen_toppings != null && !chosen_toppings.isEmpty()){
             for (int i = 0; i < chosen_toppings.size(); i++){
-                String topping_name = chosen_toppings.get(i).toString().toLowerCase();
+                String topping_name = chosen_toppings.get(i).toLowerCase();
                 for (Topping topping : Topping.values()){
                     String topping_enum = topping.toString().toLowerCase();
                     if(topping_name.equals(topping_enum)){
@@ -180,15 +184,18 @@ public class BuildYourOwnController {
                 }
             }
         }
-        temp.setToppings(pizza_toppings);
+        if (temp != null){
+            temp.setToppings(pizza_toppings);
+        }
+
     }
 
 
 
     @FXML
     private void addToOrder(ActionEvent event){
+        setSelectedToppings(); // set the toppings before adding to order
 
-        // need to do stuff for adding to order here
     }
 
 

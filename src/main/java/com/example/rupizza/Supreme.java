@@ -26,13 +26,27 @@ public class Supreme extends Pizza {
         this.sauce = Sauce.TOMATO;
     }
 
+    @Override
     public String toString(){
-        return "";
+        return "[Supreme] Sausage, Pepperoni, Ham, GreenPepper, Onion, BlackOlives, Mushroom, " + size.toString().toLowerCase()
+                + ", " + sauce.toString().toLowerCase() + ", " + extrasToString() + " $" + price();
     }
 
     @Override
     public void setToppings(ArrayList<Topping> toppings) {
 
+    }
+
+    public String extrasToString(){
+        if (extraCheese && extraSauce){
+            return "extra sauce, extra cheese";
+        } else if (extraCheese){
+            return "extra cheese";
+        } else if (extraSauce){
+            return "extra sauce";
+        }
+
+        return "";
     }
 
     @Override

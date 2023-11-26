@@ -50,17 +50,16 @@ public class BuildYourOwn extends Pizza {
     }
 
     public String toStringToppings(ArrayList <Topping> all_toppings){
-        for (int i = 0; i < all_toppings.size(); i++){
-            return all_toppings.get(i).toString() + ", ";
+        for (Topping allTopping : all_toppings) {
+            return allTopping.toString() + ", ";
         }
         return "";
     }
 
     public String toString(){
-        return "[Build Your Own] " + toStringToppings(toppings) + size.toString().toLowerCase() +
-                sauce.toString().toLowerCase() + ", " + extrasToString() + ", $" + pizza_price;
+        return "[Build Your Own] " + toStringToppings(toppings) + size.toString().toLowerCase() + ", " +
+                sauce.toString().toLowerCase() + ", " + extrasToString() + " $" + pizza_price;
     }
-
 
 
 }

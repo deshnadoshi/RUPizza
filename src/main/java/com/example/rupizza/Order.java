@@ -9,13 +9,13 @@ public class Order {
         this.all_orders = all_orders;
     }
 
-    public boolean addOrder(){
-
+    public boolean addOrder(String new_order){
+        all_orders.add(new_order);
         return true;
     }
 
-    public boolean removeOrder(){
-
+    public boolean removeOrder(String remove_order){
+        all_orders.remove(remove_order);
         return true;
     }
 

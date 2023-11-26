@@ -27,8 +27,21 @@ public class Meatzza extends Pizza {
         this.sauce = Sauce.TOMATO;
     }
 
-    public String toString(){
+    public String extrasToString(){
+        if (extraCheese && extraSauce){
+            return "extra sauce, extra cheese";
+        } else if (extraCheese){
+            return "extra cheese";
+        } else if (extraSauce){
+            return "extra sauce";
+        }
+
         return "";
+    }
+
+    public String toString(){
+        return "[Meatzza] Sausage, Pepperoni, Beef, Ham, " + size.toString().toLowerCase() + ", " + sauce.toString().toLowerCase()
+                + ", " + extrasToString() + " $" + price();
     }
 
     @Override

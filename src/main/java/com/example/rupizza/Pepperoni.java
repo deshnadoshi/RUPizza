@@ -26,8 +26,21 @@ public class Pepperoni extends Pizza {
         this.sauce = Sauce.TOMATO;
     }
 
-    public String toString(){
+    public String extrasToString(){
+        if (extraCheese && extraSauce){
+            return "extra sauce, extra cheese";
+        } else if (extraCheese){
+            return "extra cheese";
+        } else if (extraSauce){
+            return "extra sauce";
+        }
+
         return "";
+    }
+
+    public String toString(){
+        return "[Pepperoni] Pepperoni, " + size.toString().toLowerCase() + ", " + sauce.toString().toLowerCase()
+                + ", " + extrasToString() + " $" + price();
     }
 
     @Override
