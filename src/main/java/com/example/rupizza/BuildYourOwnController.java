@@ -107,7 +107,7 @@ public class BuildYourOwnController {
             temp = PizzaMaker.createPizza("BuildYourOwn");
         }
 
-        if (temp != null){
+        if (temp != null && selectedSize != null && selectedSauce != null){
             temp.setPizzaSize(selectedSize());
             temp.setSauce(selectedSauce());
 
@@ -120,17 +120,16 @@ public class BuildYourOwnController {
             }
         }
 
-        if (byoExCheese.isSelected()){
+        if (byoExCheese.isSelected() && temp != null){
             temp.setExtraCheese(true);
             pizzaPrice += 1;
         }
-        if (byoExSauce.isSelected()){
+        if (byoExSauce.isSelected() && temp != null){
             temp.setExtraSauce(true);
             pizzaPrice += 1;
         }
         if (temp != null){
             temp.setPrice(pizzaPrice);
-
         }
         byoPrice.setText("" + pizzaPrice);
 
