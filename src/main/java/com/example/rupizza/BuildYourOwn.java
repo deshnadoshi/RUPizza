@@ -46,7 +46,22 @@ public class BuildYourOwn extends Pizza {
 
     @Override
     public double price() {
-        return 8.99 + size.getCode();
+        double extraPrice = 0;
+        if (extraCheese){
+            extraPrice += 1;
+        }
+        if (extraSauce){
+            extraPrice += 1;
+        }
+
+        if (toppings != null) {
+            if (toppings.size() <= 3)
+                return 8.99 + size.getCode() + extraPrice;
+            else
+                return 8.99 + size.getCode() + ((toppings.size() - 3) * 1.49) + extraPrice;
+        }
+
+        return 8.99 + size.getCode() + extraPrice;
     }
 
 
