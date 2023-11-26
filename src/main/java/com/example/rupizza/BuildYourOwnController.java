@@ -128,7 +128,10 @@ public class BuildYourOwnController {
             temp.setExtraSauce(true);
             pizzaPrice += 1;
         }
+        if (temp != null){
+            temp.setPrice(pizzaPrice);
 
+        }
         byoPrice.setText("" + pizzaPrice);
 
     }
@@ -180,6 +183,8 @@ public class BuildYourOwnController {
         }
         temp.setToppings(pizza_toppings);
     }
+
+
 
     @FXML
     private void addToOrder(ActionEvent event){

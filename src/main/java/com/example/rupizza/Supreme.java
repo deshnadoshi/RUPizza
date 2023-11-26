@@ -34,4 +34,9 @@ public class Supreme extends Pizza {
     public void setToppings(ArrayList<Topping> toppings) {
 
     }
+
+    @Override
+    public void setPrice (double amount){
+
+    }
 }

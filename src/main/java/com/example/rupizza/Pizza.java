@@ -29,6 +29,8 @@ public abstract class Pizza {
 
     public abstract void setToppings(ArrayList<Topping> toppings);
 
+    public abstract void setPrice(double amount);
+
     @Override
     public abstract String toString();
 

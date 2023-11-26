@@ -35,4 +35,10 @@ public class Deluxe extends Pizza {
     public String toString(){
         return "[Deluxe] Sausage, Pepperoni, GreenPepper, Onion, Mushroom, ";
     }
+
+    @Override
+    public void setPrice (double amount){
+
+    }
+
 }
