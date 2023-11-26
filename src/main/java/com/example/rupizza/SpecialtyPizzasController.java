@@ -100,6 +100,13 @@ public class SpecialtyPizzasController {
 
         updatePrice(pizzaPrice);
 
+        if (specialtyExCheese.isSelected()){
+            pizzaPrice += 1;
+        }
+        if (specialtyExSauce.isSelected()){
+            pizzaPrice += 1;
+        }
+
         if (pizzaPrice == 0){
             specialtyPrice.setText("Please select a size.");
         } else {
@@ -165,6 +172,11 @@ public class SpecialtyPizzasController {
     @FXML
     private double updateExtraCheesePrice(double totalPrice){
         return specialtyExCheese.isSelected() ? totalPrice + 1.0 : totalPrice;
+    }
+
+    @FXML
+    public String getPrice(){
+        return specialtyPrice.getText().toString();
     }
 
 }

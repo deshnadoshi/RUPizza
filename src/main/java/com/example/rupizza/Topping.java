@@ -1,16 +1,16 @@
 package com.example.rupizza;
 
 public enum Topping {
-    GREEN_PEPPER(0),
+    GREENPEPPER(0),
     ONION(1),
     PINEAPPLE(2),
-    BLACK_OLIVE(3),
+    BLACKOLIVES(3),
     MUSHROOM(4),
     SAUSAGE(5),
     CHICKEN(6),
     BEEF(7),
     HAM(8),
-    CRAB_MEATS(9),
+    CRABMEATS(9),
     PEPPERONI(10),
     SQUID(11),
     SHRIMP(12);
