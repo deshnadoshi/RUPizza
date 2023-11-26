@@ -191,7 +191,8 @@ public class SpecialtyPizzasController {
 
             my_pizzas.add(new_pizza);
 
-            current_order = new Order(1, my_pizzas);
+            current_order = Order.getInstance();
+            Order.addPizza(new_pizza);
 
             specialtyNotif.appendText("\n" + new_pizza.toString());
             specialtyNotif.appendText("\nThis pizza was added to your order!");

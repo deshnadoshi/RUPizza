@@ -198,7 +198,9 @@ public class BuildYourOwnController {
         if (new_order != null){
             setSelectedToppings();
             my_pizzas.add(new_order);
-            current_order = new Order(1, my_pizzas);
+            // adds new pizza to current order
+            current_order = Order.getInstance();
+            Order.addPizza(new_order);
 
             byoOrder.appendText("\n" + new_order.toString());
             byoOrder.appendText("\nThis pizza was added to your order!");
