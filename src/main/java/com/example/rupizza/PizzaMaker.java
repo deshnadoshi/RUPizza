@@ -1,8 +1,15 @@
 package com.example.rupizza;
-// Creates an instance of the Pizza class
-// THE ONLY CLASS THAT CAN DO IT
-// CAN ONLY HAVE createPizza()!!!
+
+/**
+ * Creates an instance of the Pizza class.
+ * @author Haejin Song, Deshna Doshi
+ */
 public class PizzaMaker {
+    /**
+     * Creates a pizza.
+     * @param pizzaType String of the type of pizza to create.
+     * @return Created Pizza object.
+     */
     public static Pizza createPizza(String pizzaType) {
         Pizza pizza = null;
         if (pizzaType.equals("Deluxe")) {
