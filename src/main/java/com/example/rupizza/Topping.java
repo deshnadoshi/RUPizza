@@ -1,5 +1,9 @@
 package com.example.rupizza;
 
+/**
+ * Enum class to represent the Toppings.
+ * @author Haejin Song, Deshna Doshi
+ */
 public enum Topping {
     GREENPEPPER(0),
     ONION(1),
@@ -17,10 +21,18 @@ public enum Topping {
 
     private final int CODE;
 
+    /**
+     * Constructor for the Topping enum.
+     * @param code Integer corresponding to the toppings.
+     */
     Topping(int code) {
         this.CODE = code;
     }
 
+    /**
+     * Provides the code corresponding to the topping.
+     * @return Code (integer) of the topping.
+     */
     public int getCode() {
         return CODE;
     }
