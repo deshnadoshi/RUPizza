@@ -29,6 +29,10 @@ public class StoreOrders {
         return store_orders.get(i);
     }
 
+    public void deleteOrder(int i) {
+        store_orders.remove(i);
+    }
+
     public ArrayList<Order> getStore_orders() {
         return store_orders;
     }

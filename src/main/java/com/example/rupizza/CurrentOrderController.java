@@ -68,8 +68,6 @@ public class CurrentOrderController {
         Order currentOrder = Order.getInstance();
         StoreOrders storeOrder = StoreOrders.getInstance();
         if (!currentOrder.getAllOrders().isEmpty()) {
-            System.out.println(currentOrder);
-            System.out.println(currentOrder.getAllOrders());
             storeOrder.addOrder(currentOrder);
             currentOrder.deleteOrder();
             coOrder.setItems(null);
