@@ -9,7 +9,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.util.FXPermission;
-
 import java.util.ArrayList;
 
 public class StoreOrdersController {

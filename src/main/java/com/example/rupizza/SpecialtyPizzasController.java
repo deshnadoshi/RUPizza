@@ -40,7 +40,6 @@ public class SpecialtyPizzasController {
     private TextArea specialtyNotif;
     @FXML
     private Button specialtyAdd;
-
     private ArrayList<Pizza> my_pizzas = new ArrayList<>();
     private Order current_order;
 

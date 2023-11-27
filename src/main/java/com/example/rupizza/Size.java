@@ -11,6 +11,7 @@ public enum Size {
 
     private final int CODE;
 
+
     /**
      * Constructor for the Size enum.
      * @param code Integer corresponding to the size.

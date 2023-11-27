@@ -26,6 +26,7 @@ public class Supreme extends Pizza {
         this.size = size;
     }
 
+
     /**
      * Setter for the boolean extraSauce.
      * @param addSauce True if extra sauce is selected, false otherwise.

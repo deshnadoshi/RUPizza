@@ -1,5 +1,6 @@
 package com.example.rupizza;
 
+
 /**
  * Enum class to represent the Toppings.
  * @author Haejin Song, Deshna Doshi

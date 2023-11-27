@@ -94,6 +94,7 @@ public class Deluxe extends Pizza {
         this.sauce = Sauce.TOMATO;
     }
 
+
     /**
      * Converts the pizza information into a String.
      * @return Pizza description.

@@ -6,7 +6,6 @@ import java.util.ArrayList;
  * Set-up for the BuildYourOwn Pizza.
  * @author Haejin Song, Deshna Doshi
  */
-
 public class BuildYourOwn extends Pizza {
     private double pizza_price;
 

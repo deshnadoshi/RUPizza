@@ -12,7 +12,6 @@ import java.util.ArrayList;
  * @author Haejin Song, Deshna Doshi
  */
 
-
 public class CurrentOrderController {
     @FXML
     private ListView coOrder;
