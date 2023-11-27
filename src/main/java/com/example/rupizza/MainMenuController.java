@@ -1,8 +1,4 @@
 package com.example.rupizza;
-/**
- * Controller for the MainMenu.fxml class.
- * @author Haejin Song, Deshna Doshi
- */
 
 
 import javafx.event.ActionEvent;
@@ -20,6 +16,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
+
+/**
+ * Controller for the MainMenu.fxml class.
+ * @author Haejin Song, Deshna Doshi
+ */
 
 public class MainMenuController {
     @FXML

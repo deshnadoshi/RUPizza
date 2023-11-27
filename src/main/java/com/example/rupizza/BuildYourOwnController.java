@@ -14,6 +14,11 @@ import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 
+/**
+ * Controller for the BuildYourOwn.fxml class.
+ * @author Deshna Doshi, Haejin Song
+ */
+
 public class BuildYourOwnController {
 
     @FXML
@@ -43,6 +48,9 @@ public class BuildYourOwnController {
     @FXML
     private Button byoAddOrder;
 
+    /**
+     * Initializes the view for BuildYourOwn.fxml
+     */
     @FXML
     private void initialize(){
         ObservableList<String> pizza_toppings = FXCollections.observableArrayList("GreenPepper", "Onion", "Pineapple", "BlackOlives", "Mushroom", "Sausage", "Chicken",
@@ -54,6 +62,10 @@ public class BuildYourOwnController {
         byoImg.setImage(new Image("file:src/main/java/com/example/rupizza/images/byoPizza.jpg"));
     }
 
+    /**
+     * Adds the selected toppings to the pizza.
+     * @param event Action of adding toppings.
+     */
     @FXML
     private void addToppings(ActionEvent event){
         String selectedTopping = availToppings.getSelectionModel().getSelectedItem();
@@ -73,6 +85,10 @@ public class BuildYourOwnController {
 
     }
 
+    /**
+     * Removes the selected toppings from the pizza.
+     * @param event Action of removing toppings.
+     */
     @FXML
     private void removeToppings(ActionEvent event){
         String selectedTopping = addedToppings.getSelectionModel().getSelectedItem();
@@ -90,6 +106,9 @@ public class BuildYourOwnController {
 
     }
 
+    /**
+     * Clears the screen.
+     */
     @FXML
     private void clearOrder(){
         initialize();
@@ -102,36 +121,33 @@ public class BuildYourOwnController {
         chosen_toppings.clear();
     }
 
+    /**
+     * Calculates the price of the pizza.
+     */
     @FXML
     private void calculatePrice(){
         double pizzaPrice = 0.0;
         RadioButton selectedSize = (RadioButton) byoSize.getSelectedToggle();
         RadioButton selectedSauce = (RadioButton) byoSauce.getSelectedToggle();
-
         if (selectedSize != null && selectedSauce != null){
             new_order = PizzaMaker.createPizza("BuildYourOwn");
         }
-
         if (new_order != null && selectedSize != null && selectedSauce != null){
             new_order.setPizzaSize(selectedSize());
             new_order.setSauce(selectedSauce());
-
             pizzaPrice += new_order.advancedPrice();
         }
-
         if (chosen_toppings.size() < 3){
             byoOrder.appendText("You must choose at least three toppings before placing an order.");
             byoAddOrder.setDisable(true);
         } else {
             byoAddOrder.setDisable(false);
         }
-
         if (chosen_toppings.size() > 3){
             for (int i = 4; i <= chosen_toppings.size(); i++){
                 pizzaPrice += 1.49;
             }
         }
-
         if (byoExCheese.isSelected() && new_order != null){
             new_order.setExtraCheese(true);
             pizzaPrice += 1;
@@ -148,9 +164,12 @@ public class BuildYourOwnController {
             new_order.setPrice(pizzaPrice);
         }
         byoPrice.setText("" + pizzaPrice);
-
     }
 
+    /**
+     * Determines the size of the pizza.
+     * @return Size of the pizza.
+     */
     @FXML
     private Size selectedSize(){
         RadioButton selectedButton = (RadioButton) byoSize.getSelectedToggle();
@@ -168,6 +187,10 @@ public class BuildYourOwnController {
         return null;
     }
 
+    /**
+     * Determine the sauce on the pizza.
+     * @return Sauce on the pizza.
+     */
     @FXML
     private Sauce selectedSauce(){
         RadioButton selectedButton = (RadioButton) byoSauce.getSelectedToggle();
@@ -182,6 +205,9 @@ public class BuildYourOwnController {
         return null;
     }
 
+    /**
+     * Adds the toppings selected to a Pizza object.
+     */
     @FXML
     private void setSelectedToppings(){
         ArrayList <Topping> pizza_toppings = new ArrayList<>();
@@ -202,6 +228,10 @@ public class BuildYourOwnController {
 
     }
 
+    /**
+     * Adds a pizza to the order.
+     * @param event Action of clicking the Add To Order button.
+     */
     @FXML
     private void addToOrder(ActionEvent event){
         if (new_order != null){
