@@ -3,10 +3,7 @@ package com.example.rupizza;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
@@ -30,19 +27,20 @@ public class CurrentOrderController {
         Order currentOrder = Order.getInstance();
         ObservableList<String> current_pizzas = currentOrder.toStringArray();
         coOrder.setItems(current_pizzas);
-        coOrderNum.setText(Order.getOrderNumber());
+        coOrderNum.setText(currentOrder.getOrderNumber());
         updatePrices();
     }
 
     @FXML
     private void removePizza(ActionEvent event) {
         String selectedPizza = (String) coOrder.getSelectionModel().getSelectedItem();
-        int indexOfPizza = Order.findPizza(selectedPizza);
+        Order order = Order.getInstance();
+        int indexOfPizza = order.findPizza(selectedPizza);
         if (indexOfPizza != -1) {
             Order currentOrder = Order.getInstance();
             ObservableList<String> current_pizzas = currentOrder.toStringArray();
             current_pizzas.remove(indexOfPizza);
-            Order.removePizza(indexOfPizza);
+            currentOrder.removePizza(indexOfPizza);
             coOrder.setItems(current_pizzas);
             updatePrices();
         }
@@ -52,13 +50,24 @@ public class CurrentOrderController {
     private void addOrder(ActionEvent event) {
         Order currentOrder = Order.getInstance();
         StoreOrders storeOrder = StoreOrders.getInstance();
-        StoreOrders.addOrder(currentOrder);
-        Order.deleteOrder();
-        updatePrices();
+        if (!currentOrder.getAllOrders().isEmpty()) {
+            System.out.println(currentOrder);
+            System.out.println(currentOrder.getAllOrders());
+            storeOrder.addOrder(currentOrder);
+            currentOrder.deleteOrder();
+            coOrder.setItems(null);
+            updatePrices();
+        } else {
+            Alert noPizzas = new Alert(Alert.AlertType.ERROR);
+            noPizzas.setContentText("Add a pizza to your order.");
+            noPizzas.show();
+        }
+
     }
 
     private void updatePrices() {
-        ArrayList<Pizza> pizzas = Order.getAllOrders();
+        Order order = Order.getInstance();
+        ArrayList<Pizza> pizzas = order.getAllOrders();
         double total_pre_tax_price = 0.00;
         for (int i = 0; i < pizzas.size(); i++) {
             total_pre_tax_price += pizzas.get(i).price();

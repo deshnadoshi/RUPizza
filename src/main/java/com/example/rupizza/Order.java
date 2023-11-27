@@ -5,12 +5,13 @@ import javafx.collections.ObservableList;
 import java.util.ArrayList;
 
 public class Order {
-    private static int orderNumber = 0;
+    private int orderNumber;
     private static Order orderObject;
-    private static ArrayList <Pizza> all_orders;
+    private ArrayList <Pizza> all_orders;
     private Order(){
-        Order.orderNumber = orderNumber + 1;
-        Order.all_orders = new ArrayList<Pizza>();
+        StoreOrders storeOrders = StoreOrders.getInstance();
+        orderNumber = storeOrders.getNextOrderNumber();
+        all_orders = new ArrayList<Pizza>();
     }
 
     public static Order getInstance() {
@@ -20,19 +21,19 @@ public class Order {
         return orderObject;
     }
 
-    public static void addPizza(Pizza new_order){
+    public void addPizza(Pizza new_order){
         all_orders.add(new_order);
     }
 
-    public static void removePizza(int index){
+    public void removePizza(int index){
         all_orders.remove(index);
     }
 
-    public static String getOrderNumber(){
+    public String getOrderNumber(){
         return String.valueOf(orderNumber);
     }
 
-    public static int findPizza(String pizza) {
+    public int findPizza(String pizza) {
         for (int i = 0; i < all_orders.size(); i++) {
             if (pizza.equals(all_orders.get(i).toString())) {
                 return i;
@@ -41,20 +42,18 @@ public class Order {
         return -1;
     }
 
-    public static ArrayList<Pizza> getAllOrders() {
+    public ArrayList<Pizza> getAllOrders() {
         return all_orders;
     }
 
-    public static void deleteOrder() {
-        if (orderObject != null) {
-            orderObject = null;
-        }
+    public void deleteOrder() {
+        orderObject = null;
     }
 
     public ObservableList<String> toStringArray() {
         ObservableList<String> stringList = FXCollections.observableArrayList();
-        for (int i = 0; i < all_orders.size(); i++) {
-            stringList.add(String.valueOf(all_orders.get(i)));
+        for (int i = 0; i < this.all_orders.size(); i++) {
+            stringList.add(String.valueOf(this.all_orders.get(i)));
         }
         return stringList;
     }
