@@ -45,6 +45,12 @@ public class Order {
         return all_orders;
     }
 
+    public static void deleteOrder() {
+        if (orderObject != null) {
+            orderObject = null;
+        }
+    }
+
     public ObservableList<String> toStringArray() {
         ObservableList<String> stringList = FXCollections.observableArrayList();
         for (int i = 0; i < all_orders.size(); i++) {

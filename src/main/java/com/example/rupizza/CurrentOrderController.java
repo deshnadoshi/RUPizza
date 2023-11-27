@@ -48,6 +48,15 @@ public class CurrentOrderController {
         }
     }
 
+    @FXML
+    private void addOrder(ActionEvent event) {
+        Order currentOrder = Order.getInstance();
+        StoreOrders storeOrder = StoreOrders.getInstance();
+        StoreOrders.addOrder(currentOrder);
+        Order.deleteOrder();
+        updatePrices();
+    }
+
     private void updatePrices() {
         ArrayList<Pizza> pizzas = Order.getAllOrders();
         double total_pre_tax_price = 0.00;
