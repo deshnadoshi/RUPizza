@@ -15,6 +15,11 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
+/**
+ * Controller for the MainMenu.fxml class.
+ * @author Haejin Song, Deshna Doshi
+ */
+
 public class MainMenuController {
     @FXML
     private ImageView build;
@@ -25,6 +30,9 @@ public class MainMenuController {
     @FXML
     private ImageView storeOrders;
 
+    /**
+     * Initializes the view for MainMenu.fxml
+     */
     @FXML
     private void initialize(){
         Image buildYourOwnImg = new Image("file:src/main/java/com/example/rupizza/images/BuildYourOwn.jpg");
@@ -41,6 +49,11 @@ public class MainMenuController {
 
     }
 
+    /**
+     * Navigates to the BuildYourOwn.fxml screen.
+     * @param event The action of clicking the BuildYourOwn button.
+     * @throws Exception Error checking for button click issues.
+     */
     @FXML
     private void goToBuildYourOwn(ActionEvent event) throws Exception {
         try {
@@ -54,6 +67,11 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Navigates to CurrentOrder.fxml screen.
+     * @param event The action of clicking the CurrentOrder button.
+     * @throws Exception Error checking for button click issues.
+     */
     @FXML
     private void goToCurrentOrder(ActionEvent event) throws Exception {
         try {
@@ -67,6 +85,11 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Navigates to SpecialtyPizzas.fxml screen.
+     * @param event The action of clicking the SpecialtyPizzas button.
+     * @throws Exception Error checking for button click issues.
+     */
     @FXML
     private void goToSpecialtyPizzas(ActionEvent event) throws Exception {
         try {
@@ -80,6 +103,11 @@ public class MainMenuController {
         }
     }
 
+    /**
+     * Navigates to StoreOrders.fxml screen.
+     * @param event The action of clicking the StoreOrders button.
+     * @throws Exception Error checking for button click issues.
+     */
     @FXML
     private void goToStoreOrders(ActionEvent event) throws Exception {
         try {

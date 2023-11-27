@@ -7,6 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Launches the RUPizza application.
+ * @author Deshna Doshi, Haejin Song
+ */
 public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
