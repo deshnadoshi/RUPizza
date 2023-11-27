@@ -38,6 +38,8 @@ public class SpecialtyPizzasController {
     private TextArea specialtyPrice;
     @FXML
     private TextArea specialtyNotif;
+    @FXML
+    private Button specialtyAdd;
 
     private ArrayList<Pizza> my_pizzas = new ArrayList<>();
     private Order current_order;
@@ -85,10 +87,18 @@ public class SpecialtyPizzasController {
 
     @FXML
     private void calculatePrice(){
+
+
         double pizzaPrice = 0;
         Pizza temp = null;
         String pizzaType = pizza_options.getValue().toString();
         RadioButton selectedSize = (RadioButton) specialtySize.getSelectedToggle();
+        if (selectedSize == null){
+            specialtyAdd.setDisable(true);
+            specialtyNotif.appendText("Please select a size to add the pizza to your order.");
+        } else {
+            specialtyAdd.setDisable(false);
+        }
         if (selectedSize != null){
             temp = PizzaMaker.createPizza(pizzaType);
         }
@@ -201,12 +211,5 @@ public class SpecialtyPizzasController {
 
         }
 
-
-
-
-
-
     }
-
-
 }
