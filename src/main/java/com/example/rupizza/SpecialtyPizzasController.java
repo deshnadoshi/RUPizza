@@ -10,8 +10,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
-
 import java.util.ArrayList;
+
+/**
+ * Controller for the SpecialtyPizzas.fxml class.
+ * @author Haejin Song, Deshna Doshi
+ */
 
 public class SpecialtyPizzasController {
     @FXML
@@ -43,7 +47,9 @@ public class SpecialtyPizzasController {
     private ArrayList<Pizza> my_pizzas = new ArrayList<>();
     private Order current_order;
 
-
+    /**
+     * Initialize the view for SpecialtyPizzas.fxml
+     */
     @FXML
     private void initialize() {
         ObservableList<String> pizza_types = FXCollections.observableArrayList("Deluxe", "Supreme", "Meatzza", "Seafood", "Pepperoni");
@@ -84,10 +90,11 @@ public class SpecialtyPizzasController {
         });
     }
 
+    /**
+     * Calculate the price of a specialty pizza.
+     */
     @FXML
     private void calculatePrice(){
-
-
         double pizzaPrice = 0;
         Pizza temp = null;
         String pizzaType = pizza_options.getValue().toString();
@@ -101,40 +108,47 @@ public class SpecialtyPizzasController {
         if (selectedSize != null){
             temp = PizzaMaker.createPizza(pizzaType);
         }
-
         if (temp != null){
             temp.setPizzaSize(selectedSize());
             pizzaPrice = temp.price();
         }
-
         updatePrice(pizzaPrice);
-
         if (specialtyExCheese.isSelected()){
             pizzaPrice += 1;
         }
         if (specialtyExSauce.isSelected()){
             pizzaPrice += 1;
         }
-
         if (pizzaPrice == 0){
             specialtyPrice.setText("Please select a size.");
         } else {
             specialtyPrice.setText("" + pizzaPrice);
         }
-
         updatePrice(pizzaPrice);
     }
 
+    /**
+     * Determine if extra sauce has been selected.
+     * @return True if it has been selected, false otherwise.
+     */
     @FXML
     private boolean selectedExtraSauce(){
         return specialtyExSauce.isSelected();
     }
 
+    /**
+     * Determine if extra cheese has been selected.
+     * @return True if it has been selected, false otherwise.
+     */
     @FXML
     private boolean selectedExtraCheese(){
         return specialtyExCheese.isSelected();
     }
 
+    /**
+     * Determines the selected size of the pizza.
+     * @return Size of the pizza.
+     */
     @FXML
     private Size selectedSize(){
         RadioButton selectedButton = (RadioButton) specialtySize.getSelectedToggle();
@@ -151,6 +165,10 @@ public class SpecialtyPizzasController {
         return null;
     }
 
+    /**
+     * Updates the price of the pizza with the extra cheese and extra sauce parameters.
+     * @param price The total price calculated so far.
+     */
     @FXML
     private void updatePrice(double price){
         specialtySize.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
@@ -171,20 +189,38 @@ public class SpecialtyPizzasController {
 
     }
 
+    /**
+     * Updates the price if extra sauce is selected.
+     * @param totalPrice Total price calcuated so far.
+     * @return Total price including the extra sauce price.
+     */
     @FXML
     private double updateExtraSaucePrice(double totalPrice){
         return specialtyExSauce.isSelected() ? totalPrice + 1.0 : totalPrice;
     }
+
+    /**
+     * Updates the price if extra cheese is selected.
+     * @param totalPrice Total price calcuated so far.
+     * @return Total price including the extra cheese price.
+     */
     @FXML
     private double updateExtraCheesePrice(double totalPrice){
         return specialtyExCheese.isSelected() ? totalPrice + 1.0 : totalPrice;
     }
 
+    /**
+     * Provides the price of the pizza.
+     * @return a String of the price of the pizza.
+     */
     @FXML
     public String getPrice(){
         return specialtyPrice.getText().toString();
     }
 
+    /**
+     * Add a specialty pizza to your order.
+     */
     @FXML
     private void addToOrder(){
         String pizzaType = pizza_options.getValue().toString();
