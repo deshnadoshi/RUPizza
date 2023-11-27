@@ -40,6 +40,8 @@ public class BuildYourOwnController {
     private ImageView byoImg;
     private Order current_order = null;
     private ArrayList <Pizza> my_pizzas = new ArrayList<>();
+    @FXML
+    private Button byoAddOrder;
 
     @FXML
     private void initialize(){
@@ -115,6 +117,13 @@ public class BuildYourOwnController {
             new_order.setSauce(selectedSauce());
 
             pizzaPrice += new_order.advancedPrice();
+        }
+
+        if (chosen_toppings.size() < 3){
+            byoOrder.appendText("You must choose at least three toppings before placing an order.");
+            byoAddOrder.setDisable(true);
+        } else {
+            byoAddOrder.setDisable(false);
         }
 
         if (chosen_toppings.size() > 3){
@@ -205,7 +214,7 @@ public class BuildYourOwnController {
             byoOrder.appendText("\n" + new_order.toString());
             byoOrder.appendText("\nThis pizza was added to your order!");
             byoOrder.appendText("\nHere is your complete order: ");
-            byoOrder.appendText(current_order.toString());
+            byoOrder.appendText(current_order.allOrdersToString());
         } else {
             byoOrder.appendText("Missing pizza information. Please customize your pizza.");
         }
