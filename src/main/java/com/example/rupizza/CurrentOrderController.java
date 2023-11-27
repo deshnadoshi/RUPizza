@@ -7,6 +7,12 @@ import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
+/**
+ * Controller for the CurrentOrder.fxml class.
+ * @author Haejin Song, Deshna Doshi
+ */
+
+
 public class CurrentOrderController {
     @FXML
     private ListView coOrder;
@@ -22,6 +28,10 @@ public class CurrentOrderController {
     private Button coRemove;
     @FXML
     private Button coPlace;
+
+    /**
+     * Initializes the view for CurrentOrder.fxml
+     */
     @FXML
     private void initialize() {
         Order currentOrder = Order.getInstance();
@@ -31,6 +41,10 @@ public class CurrentOrderController {
         updatePrices();
     }
 
+    /**
+     * Removes a pizza from the current order.
+     * @param event Action of clicking the Remove Pizza button.
+     */
     @FXML
     private void removePizza(ActionEvent event) {
         String selectedPizza = (String) coOrder.getSelectionModel().getSelectedItem();
@@ -46,6 +60,10 @@ public class CurrentOrderController {
         }
     }
 
+    /**
+     * Place the order.
+     * @param event Action of clicking the Place Order button.
+     */
     @FXML
     private void addOrder(ActionEvent event) {
         Order currentOrder = Order.getInstance();
@@ -65,6 +83,9 @@ public class CurrentOrderController {
 
     }
 
+    /**
+     * Update the prices of the order.
+     */
     private void updatePrices() {
         Order order = Order.getInstance();
         ArrayList<Pizza> pizzas = order.getAllOrders();
