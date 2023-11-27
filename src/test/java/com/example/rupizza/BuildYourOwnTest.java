@@ -3,10 +3,19 @@ package com.example.rupizza;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
+
+/**
+ * JUnit test for Pizza.price()
+ * @author Deshna Doshi, Haejin Song
+ */
+
 public class BuildYourOwnTest {
 
+    /**
+     * Test the price of a small pizza with no extra sauce or cheese selected.
+     */
     @org.junit.Test
-    public void test_NoToppings() {
+    public void test_NoExtras() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
         if (testPizza != null){
             testPizza.setPizzaSize(Size.SMALL);
@@ -26,6 +35,9 @@ public class BuildYourOwnTest {
 
     }
 
+    /**
+     * Test the price of a medium pizza with three toppings.
+     */
     @org.junit.Test
     public void test_ThreeToppings() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
@@ -46,6 +58,9 @@ public class BuildYourOwnTest {
 
     }
 
+    /**
+     * Test the price of a large pizza with more than 3 toppings (5 toppings).
+     */
     @org.junit.Test
     public void test_OverThreeToppings() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
@@ -68,6 +83,9 @@ public class BuildYourOwnTest {
 
     }
 
+    /**
+     * Test the price of a large pizza with extra cheese.
+     */
     @org.junit.Test
     public void test_ExtraCheese() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
@@ -88,6 +106,9 @@ public class BuildYourOwnTest {
 
     }
 
+    /**
+     * Test the price of a medium pizza with extra sauce.
+     */
     @org.junit.Test
     public void test_ExtraSauce() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
@@ -109,6 +130,9 @@ public class BuildYourOwnTest {
 
     }
 
+    /**
+     * Test the price of a medium pizza, with 4 toppings, extra cheese, and extra sauce.
+     */
     @org.junit.Test
     public void test_BothExtras() {
         Pizza testPizza = PizzaMaker.createPizza("BuildYourOwn");
