@@ -197,7 +197,7 @@ public class SpecialtyPizzasController {
             specialtyNotif.appendText("\n" + new_pizza.toString());
             specialtyNotif.appendText("\nThis pizza was added to your order!");
             specialtyNotif.appendText("\nHere is your complete order: ");
-            specialtyNotif.appendText(current_order.toString());
+            specialtyNotif.appendText(current_order.allOrdersToString());
 
         }
 

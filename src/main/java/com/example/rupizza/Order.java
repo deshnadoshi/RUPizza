@@ -24,12 +24,21 @@ public class Order {
         all_orders.add(new_order);
     }
 
-    public static void removePizza(Pizza remove_order){
-        all_orders.remove(remove_order);
+    public static void removePizza(int index){
+        all_orders.remove(index);
     }
 
-    public static int getOrderNumber(){
-        return orderNumber;
+    public static String getOrderNumber(){
+        return String.valueOf(orderNumber);
+    }
+
+    public static int findPizza(String pizza) {
+        for (int i = 0; i < all_orders.size(); i++) {
+            if (pizza.equals(all_orders.get(i).toString())) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public static ArrayList<Pizza> getAllOrders() {
@@ -44,7 +53,7 @@ public class Order {
         return stringList;
     }
 
-    public String toString(){
+    public String allOrdersToString(){
         String retString = "";
         for (int i = 0; i < all_orders.size(); i++){
             retString += (all_orders.get(i).toString() + "\n") ;
