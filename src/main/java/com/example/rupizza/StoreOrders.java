@@ -3,12 +3,11 @@ package com.example.rupizza;
 import java.util.ArrayList;
 
 public class StoreOrders {
-    private static int nextOrderNumber = 0;
+    private int nextOrderNumber = 0;
     private static StoreOrders storeOrderObject;
-    private static ArrayList <Order> store_orders = new ArrayList<>();
+    private ArrayList <Order> store_orders = new ArrayList<>();
     private StoreOrders(){
-        StoreOrders.nextOrderNumber = nextOrderNumber + 1;
-        StoreOrders.store_orders = new ArrayList<Order>();
+        store_orders = new ArrayList<Order>();
     }
 
     public static StoreOrders getInstance() {
@@ -18,11 +17,20 @@ public class StoreOrders {
         return storeOrderObject;
     }
 
-    public static void addOrder(Order order) {
+    public int getNextOrderNumber() {
+        nextOrderNumber += 1;
+        return nextOrderNumber;
+    }
+
+    public void addOrder(Order order) {
         store_orders.add(order);
     }
 
-    public static ArrayList<Order> getStore_orders() {
+    public Order findOrder(int i) {
+        return store_orders.get(i);
+    }
+
+    public ArrayList<Order> getStore_orders() {
         return store_orders;
     }
 

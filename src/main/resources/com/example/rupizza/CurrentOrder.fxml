@@ -20,7 +20,7 @@
       <TextArea fx:id="coTax" editable="false" layoutX="268.0" layoutY="346.0" prefHeight="38.0" prefWidth="109.0" />
       <TextArea fx:id="coTotalPrice" editable="false" layoutX="95.0" layoutY="407.0" prefHeight="38.0" prefWidth="120.0" />
       <Button fx:id="coRemove" layoutX="477.0" layoutY="352.0" mnemonicParsing="false" onAction="#removePizza" text="Remove Pizza" />
-      <Button fx:id="coPlace" layoutX="477.0" layoutY="384.0" mnemonicParsing="false" text="Place Order" />
+      <Button fx:id="coPlace" layoutX="477.0" layoutY="384.0" mnemonicParsing="false" onAction="#addOrder" text="Place Order" />
       <ListView fx:id="coOrder" layoutX="26.0" layoutY="100.0" prefHeight="200.0" prefWidth="544.0" />
    </children>
 </AnchorPane>

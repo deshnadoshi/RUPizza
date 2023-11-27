@@ -209,7 +209,7 @@ public class BuildYourOwnController {
             my_pizzas.add(new_order);
             // adds new pizza to current order
             current_order = Order.getInstance();
-            Order.addPizza(new_order);
+            current_order.addPizza(new_order);
 
             byoOrder.appendText("\n" + new_order.toString());
             byoOrder.appendText("\nThis pizza was added to your order!");
