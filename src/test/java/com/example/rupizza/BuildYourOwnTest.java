@@ -11,6 +11,13 @@ public class BuildYourOwnTest {
         if (testPizza != null){
             testPizza.setPizzaSize(Size.SMALL);
             testPizza.setSauce(Sauce.TOMATO);
+
+            ArrayList <Topping> add_toppings = new ArrayList<>();
+            add_toppings.add(Topping.PINEAPPLE);
+            add_toppings.add(Topping.SQUID);
+            add_toppings.add(Topping.CRABMEATS);
+
+            testPizza.setToppings(add_toppings);
             testPizza.setExtraSauce(false);
             testPizza.setExtraCheese(false);
         }
