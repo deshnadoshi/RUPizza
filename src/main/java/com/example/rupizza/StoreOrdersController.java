@@ -12,6 +12,11 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
 
+/**
+ * Controls the StoreOrders.fxml
+ * @author Haejin Song, Deshna Doshi
+ */
+
 public class StoreOrdersController {
     @FXML
     private ListView soOrderView;
@@ -23,6 +28,10 @@ public class StoreOrdersController {
     private Button soExport;
     @FXML
     private Button soCancel;
+
+    /**
+     * Initializes the view for StoreOrders.fxml
+     */
     @FXML
     private void initialize() {
         StoreOrders storeOrder = StoreOrders.getInstance();
@@ -61,6 +70,9 @@ public class StoreOrdersController {
         }
     }
 
+    /**
+     * Handles the action of clicking the "Export Orders" button.
+     */
     @FXML
     private void sendToFile(){
         StoreOrders storeOrder = StoreOrders.getInstance();
@@ -85,6 +97,9 @@ public class StoreOrdersController {
     }
 
 
+    /**
+     * Determines which order number is chosen from the drop-down menu.
+     */
     private void getOrder() {
         String selectedOrderNumber = String.valueOf(soOrderNum.getSelectionModel().getSelectedItem());
         ObservableList numbers = soOrderNum.getItems();
@@ -102,6 +117,10 @@ public class StoreOrdersController {
         }
     }
 
+    /**
+     * Calculates the price of the order.
+     * @param order The order for which the price is calculated.
+     */
     private void getPrice(Order order) {
         ArrayList<Pizza> pizzas = order.getAllOrders();
         double total_pre_tax_price = 0.00;
