@@ -49,7 +49,7 @@ public class Deluxe extends Pizza {
      */
     @Override
     public double price() {
-        return 14.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 14.99 + size.getCode()));
     }
 
     /**

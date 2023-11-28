@@ -48,7 +48,7 @@ public class Seafood extends Pizza {
      */
     @Override
     public double price() {
-        return 17.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 17.99 + size.getCode()));
     }
 
     /**
@@ -56,7 +56,7 @@ public class Seafood extends Pizza {
      * @return The price of the pizza.
      */
     public double advancedPrice() {
-        return 17.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 17.99 + size.getCode()));
     }
 
     /**
