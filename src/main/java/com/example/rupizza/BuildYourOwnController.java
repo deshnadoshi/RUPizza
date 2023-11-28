@@ -106,20 +106,6 @@ public class BuildYourOwnController {
 
     }
 
-    /**
-     * Clears the screen.
-     */
-    @FXML
-    private void clearOrder(){
-        initialize();
-        // byoOrder.clear();
-        byoPrice.clear();
-        byoSize.getToggles().forEach(toggle -> toggle.setSelected(false));
-        byoSauce.getToggles().forEach(toggle -> toggle.setSelected(false));
-        byoExSauce.setSelected(false);
-        byoExCheese.setSelected(false);
-        chosen_toppings.clear();
-    }
 
     /**
      * Calculates the price of the pizza.
