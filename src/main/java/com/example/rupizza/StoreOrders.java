@@ -1,6 +1,9 @@
 package com.example.rupizza;
 import java.util.ArrayList;
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 public class StoreOrders {
     private int nextOrderNumber = 0;
     private static StoreOrders storeOrderObject;
@@ -37,7 +40,26 @@ public class StoreOrders {
         return store_orders;
     }
 
-    public void export(){
-        // to export the orders to a file
+    public static void export(ArrayList <Order> all_orders, File file){
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            int orderNum = 0;
+            for (Order item : all_orders) {
+                orderNum += 1;
+                for (int i = 0; i < item.getAllOrders().size(); i++){
+
+
+                    writer.write("#" + orderNum + ": " + item.getAllOrders().get(i).toString());
+                    writer.newLine();
+                }
+
+
+            }
+            writer.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
     }
+
 }

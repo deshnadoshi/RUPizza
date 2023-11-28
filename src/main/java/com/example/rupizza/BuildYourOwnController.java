@@ -163,7 +163,7 @@ public class BuildYourOwnController {
         if (new_order != null){
             new_order.setPrice(pizzaPrice);
         }
-        byoPrice.setText("" + pizzaPrice);
+        byoPrice.setText("" + String.format("%.2f", pizzaPrice));
     }
 
     /**

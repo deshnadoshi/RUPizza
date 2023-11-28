@@ -8,14 +8,17 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.util.FXPermission;
 import java.util.ArrayList;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import java.io.File;
 
 public class StoreOrdersController {
     @FXML
     private ListView soOrderView;
     @FXML
-    private ChoiceBox soOrderNum;
-    @FXML
     private TextArea soOrderPrice;
+    @FXML
+    private ComboBox soOrderNum;
     @FXML
     private Button soExport;
     @FXML
@@ -27,10 +30,13 @@ public class StoreOrdersController {
         ObservableList<Integer> order_numbers = FXCollections.observableArrayList();
         ArrayList<Order> orders = storeOrder.getStore_orders();
         for (int i = 0; i < orders.size(); i++) {
-            order_numbers.add(i+1);
+            int orderNumber = Integer.parseInt(orders.get(i).getOrderNumber());
+            order_numbers.add(orderNumber);
             all_orders.add(orders.get(i));
         }
         soOrderNum.setItems(order_numbers);
+        soOrderNum.getSelectionModel().select(0);
+        getOrder();
         soOrderNum.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             getOrder();
         });
@@ -47,9 +53,36 @@ public class StoreOrdersController {
         int indexOfOrder = orderNumbers.indexOf(selectedOrderNumber);
         StoreOrders storeOrder = StoreOrders.getInstance();
         storeOrder.deleteOrder(indexOfOrder);
-        soOrderNum.setItems(FXCollections.observableArrayList());
+        //soOrderNumReal.setItems(FXCollections.observableArrayList());
+        orderNumbers.remove(indexOfOrder);
+        soOrderNum.setItems(orderNumbers);
         soOrderPrice.setText("");
+        soOrderView.getItems().clear();
     }
+
+    @FXML
+    private void sendToFile(){
+        StoreOrders storeOrder = StoreOrders.getInstance();
+        ArrayList<Order> all_orders = new ArrayList<>();
+        ObservableList<Integer> order_numbers = FXCollections.observableArrayList();
+        ArrayList<Order> orders = storeOrder.getStore_orders();
+        for (int i = 0; i < orders.size(); i++) {
+            order_numbers.add(i+1);
+            all_orders.add(orders.get(i));
+        }
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Orders");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text Files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showSaveDialog(new Stage());
+
+
+        if (file != null) {
+            StoreOrders.export(all_orders, file);
+        }
+    }
+
 
     private void getOrder() {
         String selectedOrderNumber = String.valueOf(soOrderNum.getSelectionModel().getSelectedItem());
