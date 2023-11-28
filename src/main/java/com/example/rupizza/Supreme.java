@@ -49,7 +49,7 @@ public class Supreme extends Pizza {
      */
     @Override
     public double price() {
-        return 15.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 15.99 + size.getCode()));
     }
 
     /**
@@ -57,7 +57,7 @@ public class Supreme extends Pizza {
      * @return The price of the pizza.
      */
     public double advancedPrice() {
-        return 15.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 15.99 + size.getCode()));
     }
 
     /**

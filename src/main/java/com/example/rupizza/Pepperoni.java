@@ -48,7 +48,7 @@ public class Pepperoni extends Pizza {
      */
     @Override
     public double price() {
-        return 10.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 10.99 + size.getCode()));
     }
 
     /**
@@ -56,7 +56,7 @@ public class Pepperoni extends Pizza {
      * @return The price of the pizza.
      */
     public double advancedPrice() {
-        return 10.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 10.99 + size.getCode()));
     }
 
     /**

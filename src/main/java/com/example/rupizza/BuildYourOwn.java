@@ -103,12 +103,12 @@ public class BuildYourOwn extends Pizza {
 
         if (toppings != null) {
             if (toppings.size() <= 3)
-                return 8.99 + size.getCode() + extraPrice;
+                return Double.parseDouble(String.format("%.2f", 8.99 + size.getCode() + extraPrice));
             else
-                return 8.99 + size.getCode() + ((toppings.size() - 3) * 1.49) + extraPrice;
+                return Double.parseDouble(String.format("%.2f", 8.99 + size.getCode() + ((toppings.size() - 3) * 1.49) + extraPrice));
         }
 
-        return 8.99 + size.getCode() + extraPrice;
+        return Double.parseDouble(String.format("%.2f", 8.99 + size.getCode() + extraPrice));
     }
 
 
@@ -117,7 +117,7 @@ public class BuildYourOwn extends Pizza {
      * @return The price of the pizza.
      */
     public double advancedPrice(){
-        return 8.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 8.99 + size.getCode()));
     }
 
     /**

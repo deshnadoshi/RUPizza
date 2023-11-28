@@ -49,7 +49,7 @@ public class Meatzza extends Pizza {
      */
     @Override
     public double price() {
-        return 16.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 16.99 + size.getCode()));
     }
 
     /**
@@ -57,7 +57,7 @@ public class Meatzza extends Pizza {
      * @return The price of the pizza.
      */
     public double advancedPrice() {
-        return 16.99 + size.getCode();
+        return Double.parseDouble(String.format("%.2f", 16.99 + size.getCode()));
     }
 
     /**
