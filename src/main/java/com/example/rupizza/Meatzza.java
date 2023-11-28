@@ -49,7 +49,15 @@ public class Meatzza extends Pizza {
      */
     @Override
     public double price() {
-        return Double.parseDouble(String.format("%.2f", 16.99 + size.getCode()));
+        double add = 0.0;
+        if (extraCheese && extraSauce){
+            add += 2.0;
+        } else if (extraCheese){
+            add += 1.0;
+        } else if (extraSauce){
+            add += 1.0;
+        }
+        return Double.parseDouble(String.format("%.2f", 16.99 + size.getCode() + add));
     }
 
     /**

@@ -113,10 +113,12 @@ public class SpecialtyPizzasController {
             pizzaPrice = temp.price();
         }
         updatePrice(pizzaPrice);
-        if (specialtyExCheese.isSelected()){
+        if (specialtyExCheese.isSelected() && temp != null){
+            temp.setExtraCheese(true);
             pizzaPrice += 1;
         }
-        if (specialtyExSauce.isSelected()){
+        if (specialtyExSauce.isSelected() && temp != null){
+            temp.setExtraSauce(true);
             pizzaPrice += 1;
         }
         if (pizzaPrice == 0){
