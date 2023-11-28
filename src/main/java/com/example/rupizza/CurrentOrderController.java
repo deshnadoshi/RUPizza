@@ -91,7 +91,7 @@ public class CurrentOrderController {
             total_pre_tax_price += pizzas.get(i).price();
         }
         coPreTaxTotal.setText(String.format("%.2f", total_pre_tax_price));
-        double tax = total_pre_tax_price * 0.0625;
+        double tax = total_pre_tax_price * 0.06625;
         coTax.setText(String.format("%.2f", tax));
         double total = tax + total_pre_tax_price;
         coTotalPrice.setText(String.format("%.2f", total));
