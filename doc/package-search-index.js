@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.rupizza","l":"com.example.rupizza"}];updateSearchResults();
