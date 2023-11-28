@@ -51,13 +51,14 @@ public class StoreOrdersController {
             orderNumbers.add(String.valueOf(numbers.get(i)));
         }
         int indexOfOrder = orderNumbers.indexOf(selectedOrderNumber);
-        StoreOrders storeOrder = StoreOrders.getInstance();
-        storeOrder.deleteOrder(indexOfOrder);
-        //soOrderNumReal.setItems(FXCollections.observableArrayList());
-        orderNumbers.remove(indexOfOrder);
-        soOrderNum.setItems(orderNumbers);
-        soOrderPrice.setText("");
-        soOrderView.getItems().clear();
+        if (indexOfOrder != -1) {
+            StoreOrders storeOrder = StoreOrders.getInstance();
+            storeOrder.deleteOrder(indexOfOrder);
+            orderNumbers.remove(indexOfOrder);
+            soOrderNum.setItems(orderNumbers);
+            soOrderPrice.setText("");
+            soOrderView.getItems().clear();
+        }
     }
 
     @FXML
