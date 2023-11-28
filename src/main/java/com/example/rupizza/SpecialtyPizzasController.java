@@ -122,7 +122,7 @@ public class SpecialtyPizzasController {
         if (pizzaPrice == 0){
             specialtyPrice.setText("Please select a size.");
         } else {
-            specialtyPrice.setText("" + pizzaPrice);
+            specialtyPrice.setText("" + String.format("%.2f", pizzaPrice));
         }
         updatePrice(pizzaPrice);
     }
@@ -180,11 +180,11 @@ public class SpecialtyPizzasController {
         });
 
         specialtyExSauce.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            specialtyPrice.setText("" + updateExtraSaucePrice(price));
+            specialtyPrice.setText("" + String.format("%.2f", updateExtraSaucePrice(price)));
         });
 
         specialtyExCheese.selectedProperty().addListener((observable, oldValue, newValue) -> {
-            specialtyPrice.setText("" + updateExtraCheesePrice(price));
+            specialtyPrice.setText("" + String.format("%.2f", updateExtraCheesePrice(price)));
         });
 
     }
